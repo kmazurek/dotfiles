@@ -1,0 +1,30 @@
+[alias]
+	co = checkout
+	st = status
+	discard = checkout --
+    unstage = reset HEAD --
+    push-new = "! git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[user]
+	email = zakaprov@gmail.com
+	name = Kuba Mazurek
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore-global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[push]
+    followTags = true   # Push new tags by default
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
