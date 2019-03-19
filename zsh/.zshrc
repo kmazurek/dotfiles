@@ -79,6 +79,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -86,6 +87,8 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export VISUAL=vim
+export EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -113,13 +116,6 @@ alias xcp="xclip -o -sel clip"
 alias python=python3
 alias mkvirtualenv="mkvirtualenv -p python3"
 alias ranger=ranger-cd
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/code/python
-source /usr/local/bin/virtualenvwrapper.sh
-
-export EDITOR=vim
-export GOLEM_HOME=/home/kuba/code/python/golem
 
 extract() {
     if [ -f $1 ] ; then
@@ -179,8 +175,6 @@ function prompt() {
     fi
 }
 
-eval $(thefuck --alias)
-
 function ranger-cd {
     tempfile="$(mktemp -t tmp.XXXXXX)"
     /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
@@ -190,16 +184,6 @@ function ranger-cd {
     fi
     rm -f -- "$tempfile"
 }
-
-source ~/.config/up/up.sh
-
-# Golang
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/code/go
-export PATH=$PATH:$GOPATH/bin
-
-# Rust
-export PATH=$PATH:$HOME/.cargo/bin
 
 # Disables XON/XOFF flow control (C-s hanging terminal)
 stty -ixon
