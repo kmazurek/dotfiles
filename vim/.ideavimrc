@@ -31,6 +31,9 @@ set t_Co=256                        " Use 256 colors
 set tabstop=4                       " Show tabs with 4 spaces width
 set ttyfast                         " Faster redrawing
 
+set nomodeline                      " Disable modelines
+set modelines=0
+
 " Use system clipboard if available (see:
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard)
 if has('unnamedplus')
