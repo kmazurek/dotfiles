@@ -188,3 +188,8 @@ function ranger-cd {
 
 # Disables XON/XOFF flow control (C-s hanging terminal)
 stty -ixon
+
+yubikey_switch_key() {
+    gpg-connect-agent "scd serialno" "learn --force" /bye
+    echo UPDATESTARTUPTTY | gpg-connect-agent
+}
