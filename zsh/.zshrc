@@ -108,6 +108,7 @@ export EDITOR=vim
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_TIME_COLOR=cyan
 export SPACESHIP_DIR_TRUNC=0
+export SPACESHIP_BATTERY_SHOW=false
 
 alias reboot="systemctl reboot -i"
 alias poweroff="systemctl poweroff -i"
@@ -187,3 +188,8 @@ function ranger-cd {
 
 # Disables XON/XOFF flow control (C-s hanging terminal)
 stty -ixon
+
+yubikey_switch_key() {
+    gpg-connect-agent "scd serialno" "learn --force" /bye
+    echo UPDATESTARTUPTTY | gpg-connect-agent
+}
