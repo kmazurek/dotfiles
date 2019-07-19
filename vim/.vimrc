@@ -29,6 +29,7 @@ set smarttab                        " Smart tabs
 set softtabstop=4                   " Backspace deletes indents
 set report=0                        " Always report number of lines changed by commands
 set t_Co=256                        " Use 256 colors
+set background=dark                 " Fixes issues with incorrect colours in tmux
 set tabstop=4                       " Show tabs with 4 spaces width
 set ttyfast                         " Faster redrawing
 
