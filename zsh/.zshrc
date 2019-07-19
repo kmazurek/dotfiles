@@ -69,6 +69,8 @@ plugins=(
   docker
   pip
   python
+  pass
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
