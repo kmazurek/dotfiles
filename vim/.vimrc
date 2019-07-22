@@ -4,6 +4,7 @@ filetype plugin indent on           " Detect file types
 set autoindent                      " Indent at the same level as previous line
 set autoread                        " Read file changes made outside of vim
 set autowrite                       " Write files when leaving a modified buffer
+set background=dark                 " Fixes issues with incorrect colours in tmux
 set backspace=indent,eol,start      " Allow backspace over listed items
 set cursorline                      " Enable cursor row highlighting
 set display=lastline                " Show as much as possible of last line
@@ -13,25 +14,24 @@ set fileformats=unix,dos,mac        " File formats priority
 set history=10000                   " Maximum history entries
 set hlsearch                        " Highlight search terms
 set ignorecase                      " Case insensitive search by default
-set shiftwidth=4                    " Use 4 spaces for shifting
-set smartcase                       " Case sensitive search when uppercase present
 set incsearch                       " Incremental search
 set laststatus=2                    " Always display status line
 set mouse=a                         " Enable mouse usage
-set wrap                            " Wrap long lines
 set number                          " Show line numbers
+set report=0                        " Always report number of lines changed by commands
 set rnu                             " Show relative line numbers
 set ruler                           " Show ruler
+set shiftwidth=4                    " Use 4 spaces for shifting
 set shortmess=atOI                  " Hides empty vim message
 set showcmd                         " Show partial commands
 set showmode                        " Show current mode
+set smartcase                       " Case sensitive search when uppercase present
 set smarttab                        " Smart tabs
 set softtabstop=4                   " Backspace deletes indents
-set report=0                        " Always report number of lines changed by commands
 set t_Co=256                        " Use 256 colors
-set background=dark                 " Fixes issues with incorrect colours in tmux
 set tabstop=4                       " Show tabs with 4 spaces width
 set ttyfast                         " Faster redrawing
+set wrap                            " Wrap long lines
 
 set nomodeline                      " Disable modelines
 set modelines=0
