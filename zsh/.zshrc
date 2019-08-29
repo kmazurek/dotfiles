@@ -195,3 +195,5 @@ yubikey_switch_key() {
     gpg-connect-agent "scd serialno" "learn --force" /bye
     echo UPDATESTARTUPTTY | gpg-connect-agent
 }
+
+export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
