@@ -112,88 +112,10 @@ export SPACESHIP_TIME_COLOR=cyan
 export SPACESHIP_DIR_TRUNC=0
 export SPACESHIP_BATTERY_SHOW=false
 
-alias reboot="systemctl reboot -i"
-alias poweroff="systemctl poweroff -i"
-alias xcc="xclip -sel clip"
-alias xcp="xclip -o -sel clip"
-alias python=python3
-alias mkvirtualenv="mkvirtualenv -p python3"
-alias ranger=ranger-cd
+# Load submodules
+if [ -d ~/.zsh ]; then
+    for f in $(find -L ~/.zsh -maxdepth 1 ! -name '.*' -type f); do
+        source $f
+    done
+fi
 
-extract() {
-    if [ -f $1 ] ; then
-        case $1 in
-	    *.tar.xz)          tar xf $1	;;
-            *.tar.bz2)        tar xjf $1        ;;
-            *.tar.gz)         tar xzf $1        ;;
-            *.bz2)            bunzip2 $1        ;;
-            *.rar)            unrar x $1        ;;
-            *.gz)             gunzip $1         ;;
-            *.tar)            tar xf $1         ;;
-            *.tbz2)           tar xjf $1        ;;
-            *.tgz)            tar xzf $1        ;;
-            *.zip)            unzip $1          ;;
-            *.Z)              uncompress $1     ;;
-            *.7z)             7z e $1          ;;
-            *)                echo "'$1' cannot be extracted via extract()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
-}
-
-dgrep() {
-    grep -iR "$@" * | grep -v "Binary"
-}
-
-portslay() {
-    # Kills process bound to the port given as argument
-    kill -9 `lsof -i tcp:$1 | tail -1 | awk '{ print $2;}'`
-}
-
-docker_clear() {
-    docker stop $(docker ps -a -q)
-    docker rm $(docker ps -a -q)
-}
-
-docker_connect() {
-    docker exec -it "$1" /bin/bash
-}
-
-find_source() {
-    find ./ -type f -path "*.$1" -exec grep -Rni "$2" {} \; | grep -v 'generated'
-}
-
-# Trying to change Python virtual env if .venv file is present
-
-# Support for bash
-PROMPT_COMMAND='prompt'
-# Support for zsh
-precmd() { eval "$PROMPT_COMMAND" }
-
-function prompt() {
-    if [ "$PWD" != "$MYOLDPWD" ]; then
-        MYOLDPWD="$PWD"
-        test -e .venv && workon `cat .venv`
-    fi
-}
-
-function ranger-cd {
-    tempfile="$(mktemp -t tmp.XXXXXX)"
-    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-    test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-        cd -- "$(cat "$tempfile")"
-    fi
-    rm -f -- "$tempfile"
-}
-
-# Disables XON/XOFF flow control (C-s hanging terminal)
-stty -ixon
-
-yubikey_switch_key() {
-    gpg-connect-agent "scd serialno" "learn --force" /bye
-    echo UPDATESTARTUPTTY | gpg-connect-agent
-}
-
-export PASSWORD_STORE_GPG_OPTS='--no-throw-keyids'
