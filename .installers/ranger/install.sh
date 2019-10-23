@@ -1,4 +1,4 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
 sudo apt install ranger

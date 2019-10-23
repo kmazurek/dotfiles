@@ -34,7 +34,7 @@ install_package() {
     script="$INSTALLERS_PATH/$1/install.sh"
     if [ -f "$script" ]; then
         if ask "Run installer for $1?"; then
-            $script
+            source $script
         fi
     fi
 }
