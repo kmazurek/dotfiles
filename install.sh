@@ -54,8 +54,7 @@ main() {
     pkgs="$(find . -maxdepth 1 ! -name '.*' -type d | sed "s|./||")"
 
     # Install packages
-    for pkg in $pkgs
-    do
+    for pkg in $pkgs; do
         link_package $pkg
         install_package $pkg
     done
