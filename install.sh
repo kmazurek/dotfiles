@@ -1,20 +1,47 @@
 #!/bin/bash
+set -euo pipefail
 
-WORKING_DIR=$(mktemp -d)
-STOWSH_PATH="$WORKING_DIR/stowsh"
-STOWSH_REPO="Https://raw.githubusercontent.com/williamsmj/stowsh/master/stowsh"
+WORKDIR=$(mktemp -d)
+
+INSTALLERS_PATH=".installers"
+STOWSH_PATH="$WORKDIR/stowsh"
+STOWSH_REPO="https://raw.githubusercontent.com/williamsmj/stowsh/master/stowsh"
 
 get_stowsh() {
-    wget -P "$WORKING_DIR" "$STOWSH_REPO"
+    wget -P "$WORKDIR" "$STOWSH_REPO"
     chmod +x "$STOWSH_PATH"
 }
 
-link_package() {
-    read -p "Link $1? (y/n) " -n 1 -r
-    echo
+ask() {
+    # Based on: https://gist.github.com/davejamesmiller/1965569
+    local reply
 
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
+    while true; do
+        echo -n "$1 [y/n] "
+
+        # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
+        read reply </dev/tty
+
+        # Check if the reply is valid
+        case "$reply" in
+            Y*|y*) return 0 ;;
+            N*|n*) return 1 ;;
+        esac
+    done
+}
+
+install_package() {
+    script="$INSTALLERS_PATH/$1/install.sh"
+    if [ -f "$script" ]; then
+        if ask "Run installer for $1?"; then
+            $script
+        fi
+    fi
+}
+
+link_package() {
+    if ask "Link $1?"; then
+        echo "Linking $1 ..."
         "$STOWSH_PATH" -v -s "$1" -t "$HOME"
     fi
 }
@@ -30,9 +57,10 @@ main() {
     for pkg in $pkgs
     do
         link_package $pkg
+        install_package $pkg
     done
 
-    rm -r "$WORKING_DIR"
+    rm -r "$WORKDIR"
 }
 
 main
