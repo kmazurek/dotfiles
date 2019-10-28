@@ -1,16 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-WORKDIR=$(mktemp -d)
-
 INSTALLERS_PATH=".installers"
-STOWSH_PATH="$WORKDIR/stowsh"
-STOWSH_REPO="https://raw.githubusercontent.com/williamsmj/stowsh/master/stowsh"
-
-get_stowsh() {
-    wget -P "$WORKDIR" "$STOWSH_REPO"
-    chmod +x "$STOWSH_PATH"
-}
+STOWSH_PATH="$INSTALLERS_PATH/stowsh"
 
 ask() {
     # Based on: https://gist.github.com/davejamesmiller/1965569
@@ -47,9 +39,6 @@ link_package() {
 }
 
 main() {
-    # Download stowsh to a temporary directory
-    get_stowsh
-
     # Get root level dirs that don't start with a dot
     pkgs="$(find . -maxdepth 1 ! -name '.*' -type d | sed "s|./||")"
 
@@ -58,8 +47,6 @@ main() {
         link_package $pkg
         install_package $pkg
     done
-
-    rm -r "$WORKDIR"
 }
 
 main
