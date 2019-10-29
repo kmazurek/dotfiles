@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-sudo apt install neovim python-neovim python3-neovim
+curl -L https://github.com/neovim/neovim/releases/download/stable/nvim.appimage > ~/.local/bin/nvim
+chmod +x ~/.local/bin/nvim
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
