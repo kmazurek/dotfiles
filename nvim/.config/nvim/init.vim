@@ -25,6 +25,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug '907th/vim-auto-save'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
