@@ -7,5 +7,5 @@ chmod +x ~/.local/bin/nvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-coc_extensions="coc-json coc-lists coc-rls coc-go"
+coc_extensions="coc-json coc-lists coc-rls coc-go coc-explorer"
 nvim +"PlugInstall --sync" +"CocInstall -sync $coc_extensions" +qa

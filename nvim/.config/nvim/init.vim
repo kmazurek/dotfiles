@@ -21,9 +21,6 @@ Plug 'tpope/vim-surround'
 
 Plug 'wellle/targets.vim'
 
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
 Plug '907th/vim-auto-save'
 Plug 'cespare/vim-toml'
 
@@ -113,7 +110,7 @@ nnoremap <C-Space>f :vsp<CR>
 nnoremap <C-Space>j :sp<CR>
 " Hit return to clear search highlight.
 nnoremap <silent> <CR> :nohlsearch<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :CocCommand explorer<CR>
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
