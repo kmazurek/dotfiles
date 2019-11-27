@@ -57,3 +57,7 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " inactivity
 au CursorHoldI * stopinsert
 
+" Emulated extensions
+set commentary
+set surround
+set easymotion
