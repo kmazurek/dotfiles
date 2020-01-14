@@ -95,7 +95,8 @@ nmap <Leader><Space> :Clap buffers<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>g :CocList --auto-preview --interactive grep<CR>
 nmap <Leader>s :CocList --auto-preview --interactive symbols<CR>
-nnoremap <silent> <space>w  :exe 'CocList -I --auto-preview --interactive --input='.expand('<cword>').' grep'<CR>
+nnoremap <Leader>e :CocCommand explorer<CR>
+nnoremap <silent> <space>G  :exe 'CocList -I --auto-preview --interactive --input='.expand('<cword>').' grep'<CR>
 
 set switchbuf=useopen,usetab
 set splitbelow
@@ -110,7 +111,6 @@ nnoremap <C-Space>f :vsp<CR>
 nnoremap <C-Space>j :sp<CR>
 " Hit return to clear search highlight.
 nnoremap <silent> <CR> :nohlsearch<CR>
-nnoremap <C-n> :CocCommand explorer<CR>
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
