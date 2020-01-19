@@ -3,5 +3,6 @@
     "list.source.grep.args": [
         "--smart-case"
     ],
+    "python.jediEnabled": false,
     "suggest.triggerAfterInsertEnter": true
 }
