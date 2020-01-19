@@ -87,17 +87,19 @@ nmap <Leader>s :CocList --auto-preview --interactive symbols<CR>
 nmap <Leader>w :Clap grep ++query=<cword><CR>
 nmap <Leader>y :Clap yanks<CR>
 
+" Splitting currently active window
+nnoremap <C-Space>f :vsp<CR>
+nnoremap <C-Space>j :sp<CR>
 set switchbuf=useopen,usetab
 set splitbelow
 set splitright
 
+" Navigation between splits
 nnoremap <A-j> <C-W><C-J>
 nnoremap <A-k> <C-W><C-K>
 nnoremap <A-l> <C-W><C-L>
 nnoremap <A-h> <C-W><C-H>
 
-nnoremap <C-Space>f :vsp<CR>
-nnoremap <C-Space>j :sp<CR>
 " Hit return to clear search highlight.
 nnoremap <silent> <CR> :nohlsearch<CR>
 
