@@ -89,14 +89,19 @@ command! -bang -nargs=* Rg
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+" Leader key bindings
 map <Space> <Leader>
+
 nmap <Leader>r :source $MYVIMRC<CR>
+
 nmap <Leader><Space> :Clap buffers<CR>
+nmap <Leader>e :CocCommand explorer<CR>
 nmap <Leader>f :Files<CR>
-nmap <Leader>g :CocList --auto-preview --interactive grep<CR>
+nmap <Leader>g :Clap grep<CR>
+nmap <Leader>l :Clap loclist<CR>
 nmap <Leader>s :CocList --auto-preview --interactive symbols<CR>
-nnoremap <Leader>e :CocCommand explorer<CR>
-nnoremap <silent> <space>G  :exe 'CocList -I --auto-preview --interactive --input='.expand('<cword>').' grep'<CR>
+nmap <Leader>w :Clap grep ++query=<cword><CR>
+nmap <Leader>y :Clap yanks<CR>
 
 set switchbuf=useopen,usetab
 set splitbelow
@@ -139,4 +144,3 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 " Automatically reload files changed externally
 set autoread
 au FocusGained * :checktime
-
