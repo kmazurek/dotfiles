@@ -4,5 +4,6 @@
         "--smart-case"
     ],
     "python.jediEnabled": false,
+    "python.venvPath": "~/.virtualenvs",
     "suggest.triggerAfterInsertEnter": true
 }
