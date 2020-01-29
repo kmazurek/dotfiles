@@ -88,6 +88,9 @@ nmap <Leader>s :CocList --auto-preview --interactive symbols<CR>
 nmap <Leader>w :Clap grep ++query=<cword><CR>
 nmap <Leader>y :Clap yanks<CR>
 
+" vim-clap floating window parameters
+let g:clap_layout = { 'relative': 'editor', 'height': '40%' }
+
 " Splitting currently active window
 nnoremap <C-Space>f :vsp<CR>
 nnoremap <C-Space>j :sp<CR>
