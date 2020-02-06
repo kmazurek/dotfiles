@@ -29,7 +29,6 @@ call plug#end()
 
 set background=dark
 
-let g:lightline = { 'colorscheme': 'palenight' }
 colorscheme palenight
 
 let g:auto_save = 1
@@ -134,3 +133,22 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 " Automatically reload files changed externally
 set autoread
 au FocusGained * :checktime
+
+let g:vista_default_executive = 'coc'
+
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
+let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead',
+      \   'cocstatus': 'coc#status',
+      \   'currentfunction': 'CocCurrentFunction'
+      \ },
+      \ }

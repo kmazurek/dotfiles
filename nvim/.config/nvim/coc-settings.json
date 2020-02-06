@@ -1,4 +1,5 @@
 {
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "list.source.grep.command": "rg",
     "list.source.grep.args": [
         "--smart-case"
