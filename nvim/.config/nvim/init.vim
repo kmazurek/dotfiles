@@ -82,6 +82,7 @@ nmap <Leader><Space> :Clap buffers<CR>
 nmap <Leader>e :CocCommand explorer<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>g :Clap grep<CR>
+nmap <Leader>h :Clap history<CR>
 nmap <Leader>l :Clap loclist<CR>
 nmap <Leader>s :CocList --auto-preview --interactive symbols<CR>
 nmap <Leader>w :Clap grep ++query=<cword><CR>
