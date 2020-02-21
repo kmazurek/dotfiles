@@ -10,7 +10,7 @@ docker_connect() {
 extract() {
     if [ -f $1 ] ; then
         case $1 in
-	    *.tar.xz)          tar xf $1	;;
+            *.tar.xz)          tar xf $1	    ;;
             *.tar.bz2)        tar xjf $1        ;;
             *.tar.gz)         tar xzf $1        ;;
             *.bz2)            bunzip2 $1        ;;
@@ -21,7 +21,7 @@ extract() {
             *.tgz)            tar xzf $1        ;;
             *.zip)            unzip $1          ;;
             *.Z)              uncompress $1     ;;
-            *.7z)             7z e $1          ;;
+            *.7z)             7z e $1           ;;
             *)                echo "'$1' cannot be extracted via extract()" ;;
         esac
     else
@@ -38,19 +38,4 @@ yubikey_switch_key() {
     gpg-connect-agent "scd serialno" "learn --force" /bye
     echo UPDATESTARTUPTTY | gpg-connect-agent
 }
-
-# Trying to change Python virtual env if .venv file is present
-
-# Support for bash
-PROMPT_COMMAND='prompt'
-# Support for zsh
-precmd() { eval "$PROMPT_COMMAND" }
-
-function prompt() {
-    if [ "$PWD" != "$MYOLDPWD" ]; then
-        MYOLDPWD="$PWD"
-        test -e .venv && workon `cat .venv`
-    fi
-}
-
 
