@@ -88,6 +88,10 @@ nmap <Leader>s :CocList --auto-preview --interactive symbols<CR>
 nmap <Leader>w :Clap grep ++query=<cword><CR>
 nmap <Leader>y :Clap yanks<CR>
 
+augroup clap
+    au FileType clap_input inoremap <silent> <buffer> <Esc> <Esc>:call clap#handler#exit()<CR>
+augroup end
+
 " vim-clap floating window parameters
 let g:clap_layout = { 'relative': 'editor', 'height': '40%' }
 
