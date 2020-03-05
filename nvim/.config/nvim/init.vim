@@ -33,6 +33,7 @@ colorscheme palenight
 
 let g:auto_save = 1
 let g:auto_save_silent = 1
+set noswapfile
 
 if (has("termguicolors"))
   set termguicolors
