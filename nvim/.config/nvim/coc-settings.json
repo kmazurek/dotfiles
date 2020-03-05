@@ -6,5 +6,6 @@
     ],
     "python.jediEnabled": false,
     "python.venvPath": "~/.virtualenvs",
-    "suggest.triggerAfterInsertEnter": true
+    "suggest.triggerAfterInsertEnter": true,
+    "explorer.icon.enableNerdfont": true
 }
