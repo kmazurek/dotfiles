@@ -86,10 +86,12 @@ nmap <Leader>g :Clap grep<CR>
 nmap <Leader>h :Clap history<CR>
 nmap <Leader>l :Clap loclist<CR>
 nmap <Leader>r :%s/\<<C-r><C-w>\>//g<left><left>
-vmap <Leader>r :s///g<left><left><left>
 nmap <Leader>s :CocList --auto-preview --interactive symbols<CR>
 nmap <Leader>w :Clap grep ++query=<cword><CR>
+nmap <Leader>v :Vista!!<CR>
 nmap <Leader>y :Clap yanks<CR>
+
+vmap <Leader>r :s///g<left><left><left>
 
 augroup clap
     au FileType clap_input inoremap <silent> <buffer> <Esc> <Esc>:call clap#handler#exit()<CR>
@@ -143,6 +145,7 @@ set autoread
 au FocusGained * :checktime
 
 let g:vista_default_executive = 'coc'
+let g:vista_sidebar_width = 50
 
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
