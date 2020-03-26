@@ -25,6 +25,8 @@ Plug 'wellle/targets.vim'
 Plug '907th/vim-auto-save'
 Plug 'cespare/vim-toml'
 
+Plug 'bkad/CamelCaseMotion'
+
 call plug#end()
 
 set background=dark
@@ -78,6 +80,9 @@ command! -bang -nargs=* Rg
 " Likewise, Files command with preview window
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+" Leader key for camel and snake case motions (w, b, e)
+let g:camelcasemotion_key = ','
 
 " Leader key bindings
 map <Space> <Leader>
