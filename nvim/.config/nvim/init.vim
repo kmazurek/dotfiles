@@ -33,6 +33,11 @@ colorscheme palenight
 
 let g:auto_save = 1
 let g:auto_save_silent = 1
+" Auto-save after updatetime in normal mode
+let g:auto_save_events = ["CursorHold"]
+set updatetime=1500
+
+" Disable swap files
 set noswapfile
 
 if (has("termguicolors"))
