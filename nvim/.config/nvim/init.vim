@@ -173,3 +173,6 @@ let g:lightline = {
       \   'currentfunction': 'CocCurrentFunction'
       \ },
       \ }
+
+" Workaround for lightline not updating after closing clap window
+autocmd User ClapOnExit call lightline#update()
