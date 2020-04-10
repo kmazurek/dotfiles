@@ -27,7 +27,7 @@ Plug 'cespare/vim-toml'
 
 Plug 'bkad/CamelCaseMotion'
 
-Plug 'psf/black'
+Plug 'psf/black', { 'tag': '19.10b0' }
 
 call plug#end()
 
@@ -178,3 +178,13 @@ let g:lightline = {
 
 " Workaround for lightline not updating after closing clap window
 autocmd User ClapOnExit call lightline#update()
+
+" Black formatter config
+let g:black_linelength = 80
+let g:black_skip_string_normalization = 1
+
+" Automatic code formatting
+augroup auto_formatting
+  autocmd!
+  autocmd BufWritePre *.py undojoin | Black
+augroup END
