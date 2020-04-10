@@ -8,6 +8,9 @@
         "--smart-case"
     ],
     "python.jediEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.flake8Enabled": true,
     "python.venvPath": "~/.virtualenvs",
     "suggest.triggerAfterInsertEnter": true,
     "explorer.file.showHiddenFiles": true,
