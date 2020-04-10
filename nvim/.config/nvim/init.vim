@@ -27,6 +27,8 @@ Plug 'cespare/vim-toml'
 
 Plug 'bkad/CamelCaseMotion'
 
+Plug 'psf/black'
+
 call plug#end()
 
 set background=dark
