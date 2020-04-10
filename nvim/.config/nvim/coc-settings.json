@@ -10,6 +10,7 @@
     "python.jediEnabled": false,
     "python.venvPath": "~/.virtualenvs",
     "suggest.triggerAfterInsertEnter": true,
+    "explorer.file.showHiddenFiles": true,
     "explorer.icon.enableNerdfont": true,
-    "explorer.file.showHiddenFiles": true
+    "explorer.quitOnOpen": true
 }
