@@ -179,12 +179,15 @@ let g:lightline = {
 " Workaround for lightline not updating after closing clap window
 autocmd User ClapOnExit call lightline#update()
 
-" Black formatter config
-let g:black_linelength = 80
-let g:black_skip_string_normalization = 1
+function! FormatPython()
+    " Searches from the current file dir upwards
+    if len(findfile("pyproject.toml", ".;"))
+        Black
+    endif
+endfunction
 
 " Automatic code formatting
 augroup auto_formatting
   autocmd!
-  autocmd BufWritePre *.py undojoin | Black
+  autocmd BufWritePre *.py silent! undojoin | call FormatPython()
 augroup END
