@@ -27,7 +27,7 @@ Plug 'cespare/vim-toml'
 
 Plug 'bkad/CamelCaseMotion'
 
-Plug 'psf/black', { 'tag': '19.10b0' }
+Plug 'psf/black', { 'commit': 'af7105f9ab4812c99f3d8a562b15913c2ccd7190' }
 
 call plug#end()
 
