@@ -179,6 +179,8 @@ let g:lightline = {
 " Workaround for lightline not updating after closing clap window
 autocmd User ClapOnExit call lightline#update()
 
+let g:black_linelength = 80
+
 function! FormatPython()
     " Searches from the current file dir upwards
     if len(findfile("pyproject.toml", ".;"))
