@@ -95,6 +95,7 @@ nmap <Leader><Space> :Clap buffers<CR>
 nmap <Leader>e :CocCommand explorer<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>g :Clap grep<CR>
+nmap <Leader>G :Clap grep2<CR>
 nmap <Leader>h :Clap history<CR>
 nmap <Leader>l :Clap loclist<CR>
 nmap <Leader>r :%s/\<<C-r><C-w>\>//g<left><left>
