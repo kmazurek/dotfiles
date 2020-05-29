@@ -10,7 +10,10 @@
     "python.jediEnabled": false,
     "python.linting.enabled": true,
     "python.linting.mypyEnabled": true,
-    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=C0330, C0114, C0115, C0116"
+    ],
     "python.venvPath": "~/.virtualenvs",
     "suggest.triggerAfterInsertEnter": true,
     "explorer.file.showHiddenFiles": true,
