@@ -89,20 +89,20 @@ let g:camelcasemotion_key = ','
 " Leader key bindings
 map <Space> <Leader>
 
-nmap <Leader>S :source $MYVIMRC<CR>
+nnoremap <Leader>S :source $MYVIMRC<CR>
 
-nmap <Leader><Space> :Clap buffers<CR>
-nmap <Leader>e :CocCommand explorer<CR>
-nmap <Leader>f :Files<CR>
-nmap <Leader>g :Clap grep<CR>
-nmap <Leader>G :Clap grep2<CR>
-nmap <Leader>h :Clap history<CR>
-nmap <Leader>l :Clap loclist<CR>
-nmap <Leader>r :%s/\<<C-r><C-w>\>//g<left><left>
-nmap <Leader>s :CocList --auto-preview --interactive symbols<CR>
-nmap <Leader>w :Clap grep ++query=<cword><CR>
-nmap <Leader>v :Vista!!<CR>
-nmap <Leader>y :Clap yanks<CR>
+nnoremap <Leader><Space> :Clap buffers<CR>
+nnoremap <Leader>e :CocCommand explorer<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>g :Clap grep<CR>
+nnoremap <Leader>G :Clap grep2<CR>
+nnoremap <Leader>h :Clap history<CR>
+nnoremap <Leader>l :Clap loclist<CR>
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<left><left>
+nnoremap <Leader>s :CocList --auto-preview --interactive symbols<CR>
+nnoremap <Leader>w :Clap grep ++query=<cword><CR>
+nnoremap <Leader>v :Vista!!<CR>
+nnoremap <Leader>y :Clap yanks<CR>
 
 vmap <Leader>r :s///g<left><left><left>
 
