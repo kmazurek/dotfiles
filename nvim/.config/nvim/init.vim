@@ -98,9 +98,11 @@ function! OpenGitDiff(split_direction)
 endfunction
 
 " In git diff: apply our (left) version of selected hunk
-nnoremap ch :diffget //2<CR>
+nnoremap cgh :diffget //2<CR>
 " In git diff: apply their (right) version of selected hunk
-nnoremap cl :diffget //3<CR>
+nnoremap cgl :diffget //3<CR>
+" In git diff: apply selected hunk to the working copy
+nnoremap cp :diffput //1<CR>
 " Write the current file to the git index and stage it
 nnoremap cS :Gwrite!<CR>
 
