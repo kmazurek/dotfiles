@@ -83,8 +83,26 @@ command! -bang -nargs=* Rg
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-" Leader key for camel and snake case motions (w, b, e)
-let g:camelcasemotion_key = ','
+" Git conflict resolution
+function! OpenGitDiff(split_direction)
+    " three-way git diff for a given file
+
+    " close other buffers before opening the split
+    only
+
+    if a:split_direction == 'v'
+        Gvdiffsplit!
+    elseif a:split_direction == 'h'
+        Gdiffsplit!
+    endif
+endfunction
+
+" In git diff: apply our (left) version of selected hunk
+nnoremap ch :diffget //2<CR>
+" In git diff: apply their (right) version of selected hunk
+nnoremap cl :diffget //3<CR>
+" Write the current file to the git index and stage it
+nnoremap cS :Gwrite!<CR>
 
 " Leader key bindings
 map <Space> <Leader>
@@ -92,6 +110,9 @@ map <Space> <Leader>
 nnoremap <Leader>S :source $MYVIMRC<CR>
 
 nnoremap <Leader><Space> :Clap buffers<CR>
+nnoremap <Leader><Backspace> :only<CR>
+nnoremap <Leader>c :call OpenGitDiff('v')<CR>
+nnoremap <Leader>C :call OpenGitDiff('h')<CR>
 nnoremap <Leader>e :CocCommand explorer<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>g :Clap grep<CR>
@@ -105,6 +126,9 @@ nnoremap <Leader>v :Vista!!<CR>
 nnoremap <Leader>y :Clap yanks<CR>
 
 vmap <Leader>r :s///g<left><left><left>
+
+" Leader key for camel and snake case motions (w, b, e)
+let g:camelcasemotion_key = ','
 
 augroup clap
     au FileType clap_input inoremap <silent> <buffer> <Esc> <Esc>:call clap#handler#exit()<CR>
@@ -192,3 +216,4 @@ augroup auto_formatting
   autocmd!
   autocmd BufWritePre *.py silent! undojoin | call FormatPython()
 augroup END
+
