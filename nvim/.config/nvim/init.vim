@@ -27,7 +27,9 @@ Plug 'cespare/vim-toml'
 
 Plug 'bkad/CamelCaseMotion'
 
-Plug 'psf/black', { 'commit': 'af7105f9ab4812c99f3d8a562b15913c2ccd7190' }
+Plug 'psf/black'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 call plug#end()
 
@@ -40,6 +42,10 @@ let g:auto_save_silent = 1
 " Auto-save after updatetime in normal mode
 let g:auto_save_events = ["BufLeave", "CursorHold", "FocusLost"]
 set updatetime=1000
+
+" Disable closing markdown preview browser tab whenever leaving .md buffer
+let g:mkdp_auto_close = 0
+nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " Disable swap files
 set noswapfile
@@ -111,8 +117,8 @@ map <Space> <Leader>
 
 nnoremap <Leader>S :source $MYVIMRC<CR>
 
-nnoremap <Leader><Space> :Clap buffers<CR>
 nnoremap <Leader><Backspace> :only<CR>
+nnoremap <Leader><Space> :Clap buffers<CR>
 nnoremap <Leader>c :call OpenGitDiff('v')<CR>
 nnoremap <Leader>C :call OpenGitDiff('h')<CR>
 nnoremap <Leader>e :CocCommand explorer<CR>
