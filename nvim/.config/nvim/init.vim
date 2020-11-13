@@ -133,6 +133,8 @@ nnoremap <Leader>s :CocList --auto-preview --interactive symbols<CR>
 nnoremap <Leader>w :Clap grep ++query=<cword><CR>
 nnoremap <Leader>v :Vista!!<CR>
 nnoremap <Leader>y :Clap yanks<CR>
+nnoremap <Leader>/ :Clap search_history<CR>
+nnoremap <Leader>: :Clap command_history<CR>
 
 vmap <Leader>r :s///g<left><left><left>
 
