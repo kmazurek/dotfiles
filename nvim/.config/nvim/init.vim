@@ -57,11 +57,15 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" Remap keys for gotos
+" coc navigation bindings
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> ge <Plug>(coc-diagnostic-next-error)
+nmap <silent> gE <Plug>(coc-diagnostic-prev-error)
+nmap <silent> gw <Plug>(coc-diagnostic-prev)
+nmap <silent> gW <Plug>(coc-diagnostic-next)
 "
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -125,6 +129,7 @@ nnoremap <Leader><Backspace> :only<CR>
 nnoremap <Leader>b :Clap buffers<CR>
 nnoremap <Leader>c :call OpenGitDiff('v')<CR>
 nnoremap <Leader>C :call OpenGitDiff('h')<CR>
+nnoremap <Leader>d :CocDiagnostics<CR>
 nnoremap <Leader>e :CocCommand explorer<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>g :Clap grep<CR>
