@@ -18,7 +18,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
 
 Plug 'wellle/targets.vim'
 
@@ -30,6 +29,8 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'psf/black'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+Plug 'machakann/vim-sandwich'
 
 call plug#end()
 
