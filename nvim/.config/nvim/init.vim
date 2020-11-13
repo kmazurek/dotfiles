@@ -34,6 +34,8 @@ Plug 'machakann/vim-sandwich'
 
 Plug 'easymotion/vim-easymotion'
 
+Plug 'goldfeld/vim-seek'
+
 call plug#end()
 
 set background=dark
@@ -175,7 +177,9 @@ nnoremap <A-l> <C-W><C-L>
 nnoremap <A-h> <C-W><C-H>
 
 " Hit return to clear search highlight.
-nnoremap <silent> <CR> :nohlsearch<CR>
+nnoremap <silent> <Backspace> :nohlsearch<CR>
+
+let g:SeekKey = '<CR>'
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
