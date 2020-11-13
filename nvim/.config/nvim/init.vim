@@ -32,6 +32,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 Plug 'machakann/vim-sandwich'
 
+Plug 'easymotion/vim-easymotion'
+
 call plug#end()
 
 set background=dark
@@ -118,8 +120,9 @@ map <Space> <Leader>
 
 nnoremap <Leader>S :source $MYVIMRC<CR>
 
+nmap <Leader><Space> <Plug>(easymotion-overwin-f2)
 nnoremap <Leader><Backspace> :only<CR>
-nnoremap <Leader><Space> :Clap buffers<CR>
+nnoremap <Leader>b :Clap buffers<CR>
 nnoremap <Leader>c :call OpenGitDiff('v')<CR>
 nnoremap <Leader>C :call OpenGitDiff('h')<CR>
 nnoremap <Leader>e :CocCommand explorer<CR>
@@ -140,6 +143,9 @@ vmap <Leader>r :s///g<left><left><left>
 
 " Leader key for camel and snake case motions (w, b, e)
 let g:camelcasemotion_key = ','
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
 
 augroup clap
     au FileType clap_input inoremap <silent> <buffer> <Esc> <Esc>:call clap#handler#exit()<CR>
