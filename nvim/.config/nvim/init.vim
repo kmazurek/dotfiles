@@ -137,7 +137,9 @@ nnoremap <Leader>G :Clap grep2<CR>
 nnoremap <Leader>h :Clap history<CR>
 nnoremap <Leader>l :Clap loclist<CR>
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<left><left>
+nmap <Leader>R <Plug>(coc-rename)
 nnoremap <Leader>s :CocList --auto-preview --interactive symbols<CR>
+nnoremap <Leader>q :Clap quickfix<CR>
 nnoremap <Leader>w :Clap grep ++query=<cword><CR>
 nnoremap <Leader>v :Vista!!<CR>
 nnoremap <Leader>y :Clap yanks<CR>
