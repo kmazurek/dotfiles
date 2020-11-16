@@ -1,6 +1,6 @@
-PASSWORD_STORE_ENABLE_EXTENSIONS=true
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
-pass_wrapper() {
+function pass_wrapper() {
     if [ $# -eq 0 ]; then
         pass fzf
     else
