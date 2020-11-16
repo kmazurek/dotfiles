@@ -24,8 +24,7 @@ candidates=$(list_entries)
 
 res=$(candidate_selector_fzf "$query" "$candidates")
 if [ -n "$res" ]; then
-	pass show "$res" | tail -n +2 || exit $?
-	pass show -c "$res"
+	pass show "$res" || exit $?
 else
 	exit 1
 fi
