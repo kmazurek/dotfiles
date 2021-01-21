@@ -16,7 +16,6 @@ set hlsearch                        " Highlight search terms
 set ignorecase                      " Case insensitive search by default
 set incsearch                       " Incremental search
 set laststatus=2                    " Always display status line
-set mouse=a                         " Enable mouse usage
 set number                          " Show line numbers
 set report=0                        " Always report number of lines changed by commands
 set rnu                             " Show relative line numbers
@@ -35,6 +34,9 @@ set wrap                            " Wrap long lines
 
 set nomodeline                      " Disable modelines
 set modelines=0
+
+" Disable entering visual mode on mouse selection
+set mouse-=a
 
 " Use system clipboard if available (see:
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard)
