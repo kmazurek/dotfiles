@@ -38,6 +38,10 @@ Plug 'goldfeld/vim-seek'
 
 Plug 'troydm/zoomwintab.vim'
 
+Plug 'mhinz/vim-signify'
+
+Plug 'puremourning/vimspector'
+
 call plug#end()
 
 set background=dark
@@ -247,4 +251,3 @@ augroup auto_formatting
   autocmd!
   autocmd BufWritePre *.py silent! undojoin | call FormatPython()
 augroup END
-
