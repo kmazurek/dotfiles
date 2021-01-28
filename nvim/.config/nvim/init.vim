@@ -48,6 +48,9 @@ set background=dark
 
 colorscheme palenight
 
+" Disable entering visual mode on mouse selection
+set mouse-=a
+
 let g:auto_save = 1
 let g:auto_save_silent = 1
 " Auto-save after updatetime in normal mode
