@@ -75,8 +75,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> ge <Plug>(coc-diagnostic-next-error)
 nmap <silent> gE <Plug>(coc-diagnostic-prev-error)
-nmap <silent> gw <Plug>(coc-diagnostic-prev)
-nmap <silent> gW <Plug>(coc-diagnostic-next)
+nmap <silent> gw <Plug>(coc-diagnostic-next)
+nmap <silent> gW <Plug>(coc-diagnostic-prev)
 "
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
