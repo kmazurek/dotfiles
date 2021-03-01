@@ -7,3 +7,5 @@ function ranger-cd {
     fi
     rm -f -- "$tempfile"
 }
+
+alias ranger=ranger-cd
