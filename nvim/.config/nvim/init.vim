@@ -220,6 +220,7 @@ set autoread
 au FocusGained * :checktime
 
 let g:vista_default_executive = 'coc'
+let g:vista_ignore_kinds = ["Variable", "Unknown"]
 let g:vista_sidebar_width = 50
 
 function! CocCurrentFunction()
