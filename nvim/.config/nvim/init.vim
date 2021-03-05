@@ -171,7 +171,7 @@ augroup clap
 augroup end
 
 " vim-clap floating window parameters
-let g:clap_layout = { 'relative': 'editor', 'height': '40%' }
+let g:clap_layout = { 'relative': 'editor', 'height': '60%' }
 
 " Splitting currently active window
 nnoremap <C-Space>f :vsp<CR>
