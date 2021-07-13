@@ -42,6 +42,10 @@ Plug 'mhinz/vim-signify'
 
 Plug 'puremourning/vimspector'
 
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
 set background=dark
@@ -137,25 +141,25 @@ nnoremap <Leader>S :source $MYVIMRC<CR>
 
 nmap <Leader><Space> <Plug>(easymotion-overwin-f2)
 nnoremap <Leader><Backspace> :only<CR>
-nnoremap <Leader>b :Clap buffers<CR>
+nnoremap <Leader>b :Telescope buffers<CR>
 nnoremap <Leader>c :call OpenGitDiff('v')<CR>
 nnoremap <Leader>C :call OpenGitDiff('h')<CR>
 nnoremap <Leader>d :CocDiagnostics<CR>
 nnoremap <Leader>e :CocCommand explorer<CR>
-nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>g :Clap grep<CR>
+nnoremap <Leader>f :Telescope find_files<CR>
+nnoremap <Leader>g :Telescope live_grep<CR>
 nnoremap <Leader>G :Clap grep2<CR>
-nnoremap <Leader>h :Clap history<CR>
-nnoremap <Leader>l :Clap loclist<CR>
+nnoremap <Leader>h :Telescope oldfiles<CR>
+nnoremap <Leader>l :Telescope loclist<CR>
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<left><left>
 nmap <Leader>R <Plug>(coc-rename)
 nnoremap <Leader>s :CocList --auto-preview --interactive symbols<CR>
-nnoremap <Leader>q :Clap quickfix<CR>
-nnoremap <Leader>w :Clap grep ++query=<cword><CR>
+nnoremap <Leader>q :Telescope quickfix<CR>
+nnoremap <Leader>w :Telescope grep_string<CR>
 nnoremap <Leader>v :Vista!!<CR>
 nnoremap <Leader>y :Clap yanks<CR>
 nnoremap <Leader>/ :Clap search_history<CR>
-nnoremap <Leader>: :Clap command_history<CR>
+nnoremap <Leader>: :Telescope command_history<CR>
 nnoremap <Leader>z :ZoomWinTabToggle<CR>
 
 vmap <Leader>r :s///g<left><left><left>
