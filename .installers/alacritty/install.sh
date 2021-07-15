@@ -1,5 +1,12 @@
 #!/bin/bash
 set -euo pipefail
 
-sudo add-apt-repository ppa:mmstick76/alacritty
-sudo apt install alacritty
+case "$DISTRO" in
+    *Ubuntu*)
+        sudo add-apt-repository ppa:mmstick76/alacritty
+        $INSTALL_CMD alacritty
+        ;;
+    *)
+        $INSTALL_CMD alacritty
+        ;;
+esac

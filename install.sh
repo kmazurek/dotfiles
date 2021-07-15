@@ -38,7 +38,34 @@ link_package() {
     fi
 }
 
+set_distro_name() {
+    if ! [ -f /etc/os-release ]; then
+        echo "Cannot determine distro: /etc/os-release doesn't exist"
+	exit 1
+    fi
+
+    source /etc/os-release
+    export DISTRO=$NAME
+}
+
+set_install_cmd() {
+    case "$DISTRO" in
+        *openSUSE*)
+	    export INSTALL_CMD="sudo zypper in -y"
+	    ;;
+        *Ubuntu*)
+	    export INSTALL_CMD="sudo apt install -y"
+	    ;;
+	*)
+	    echo "Unrecognized distro: $DISTRO"
+	    exit 1
+	    ;;
+     esac
+}
+
 main() {
+    set_distro_name
+    set_install_cmd
     # If any arguments were passed in, use them as the list of packages to install
     if [ $# -eq 0 ]; then
         # Get root level dirs that don't start with a dot

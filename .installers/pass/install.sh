@@ -1,4 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
-sudo apt install pass
+case "$DISTRO" in
+    *openSUSE*)
+        $INSTALL_CMD password-store
+        ;;
+    *)
+        $INSTALL_CMD pass
+        ;;
+esac
