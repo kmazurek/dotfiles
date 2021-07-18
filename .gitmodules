@@ -1,0 +1,15 @@
+[submodule "zsh/.zsh/plugins/bd"]
+	path = zsh/.zsh/plugins/bd
+	url = git@github.com:Tarrasch/zsh-bd.git
+[submodule "zsh/.zsh/plugins/zsh-completions"]
+	path = zsh/.zsh/plugins/zsh-completions
+	url = git@github.com:zsh-users/zsh-completions.git
+[submodule "zsh/.zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/.zsh/plugins/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/.zsh/plugins/zsh-autosuggestions"]
+	path = zsh/.zsh/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "zsh/.zsh/plugins/pure"]
+	path = zsh/.zsh/plugins/pure
+	url = git@github.com:sindresorhus/pure.git
