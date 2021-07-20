@@ -13,6 +13,8 @@ fpath+=$PLUGINS/pure
 autoload -U promptinit; promptinit
 prompt pure
 
+PURE_GIT_PULL=0
+
 autoload -U compinit; compinit
 
 # load custom submodules
