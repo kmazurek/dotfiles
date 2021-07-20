@@ -13,3 +13,6 @@
 [submodule "zsh/.zsh/plugins/pure"]
 	path = zsh/.zsh/plugins/pure
 	url = git@github.com:sindresorhus/pure.git
+[submodule "zsh/.zsh/plugins/fzf"]
+	path = zsh/.zsh/plugins/fzf
+	url = git@github.com:junegunn/fzf.git

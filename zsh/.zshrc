@@ -26,3 +26,9 @@ fi
 
 # should be loaded as late as possible
 source $PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# fzf
+if $(which fzf &>/dev/null); then
+    source $PLUGINS/fzf/shell/completion.zsh
+    source $PLUGINS/fzf/shell/key-bindings.zsh
+fi
