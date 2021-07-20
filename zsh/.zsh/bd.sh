@@ -7,3 +7,4 @@ function bd_wrapper() {
 }
 
 alias bd=bd_wrapper
+alias up=bd_wrapper
