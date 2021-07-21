@@ -72,6 +72,9 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" coc extensions
+let g:coc_global_extensions = ['coc-explorer', 'coc-json', 'coc-lists', 'coc-python', 'coc-rls']
+
 " coc navigation bindings
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
