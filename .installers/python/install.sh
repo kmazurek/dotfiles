@@ -1,4 +1,4 @@
 #!/bin/bash
 set -euo pipefail
 
-pip install virtualenvwrapper
+pip install black mypy virtualenvwrapper

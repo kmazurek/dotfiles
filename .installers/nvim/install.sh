@@ -10,3 +10,5 @@ nvim +"PlugInstall --sync" +qa
 
 # coc.nvim 
 curl -sL install-node.now.sh/lts | sudo bash
+
+pip install neovim
