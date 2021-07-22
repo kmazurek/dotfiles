@@ -1,8 +1,4 @@
 #!/bin/bash
-set -euo pipefail
+set -eu
 
-# up
-curl --create-dirs -o ~/.config/up/up.sh https://raw.githubusercontent.com/shannonmoeller/up/master/up.sh
-chmod +x ~/.config/up/up.sh
-
-$INSTALL_CMD fzf
+$INSTALL_CMD htop jq
