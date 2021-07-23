@@ -1,5 +1,8 @@
 export PATH=$HOME/.local/bin:$PATH
 
+# in case of failed glob match, pass the bad match onto the command (e.g. fixes git HEAD^)
+setopt NO_NOMATCH
+
 # default editor
 export VISUAL=vim
 export EDITOR=vim
