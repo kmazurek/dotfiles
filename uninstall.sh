@@ -1,5 +1,7 @@
 #!/bin/bash
 
+STOWSH_PATH=".installers/stowsh"
+
 # If any arguments were passed in, use them as the list of packages to install
 if [ $# -eq 0 ]; then
     # Get root level dirs that don't start with a dot
@@ -15,6 +17,6 @@ do
 
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        stowsh -D -v -s "$pkg" -t "$HOME"
+        "$STOWSH_PATH" -D -v -s "$pkg" -t "$HOME"
     fi
 done
