@@ -10,6 +10,8 @@ case "$DISTRO" in
         ;;
 esac
 
+$INSTALL_CMD fzf
+
 key="0x53507E32EE45F70D"
 gpg --keyserver pgp.mit.edu --recv-key $key
 # used to set ultimate trust for the imported key
