@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eu
 
-$INSTALL_CMD htop jq
+$INSTALL_CMD htop jq fzf
