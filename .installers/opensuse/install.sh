@@ -2,17 +2,13 @@
 set -eu
 
 # opi
-sudo zypper in opi
+sudo zypper in -y opi
 
 # video codecs
-sudo zypper in ffmpeg-4
 opi codecs
 
 # flatpak
-sudo zypper in flatpak
+sudo zypper in -y flatpak
 
 # xinput
-sudo zypper in xinput xev
-
-# pipewire
-sudo zypper in pipewire pipewire-alsa pipewire-pulseaudio pipewire-libjack-0_3
+sudo zypper in -y xinput xev
