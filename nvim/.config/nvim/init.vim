@@ -46,6 +46,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'machakann/vim-highlightedyank'
+
 call plug#end()
 
 set background=dark
@@ -262,3 +264,5 @@ augroup auto_formatting
   autocmd!
   autocmd BufWritePre *.py silent! undojoin | call FormatPython()
 augroup END
+
+let g:highlightedyank_highlight_duration = 500
