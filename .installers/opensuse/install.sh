@@ -7,8 +7,8 @@ sudo zypper in -y opi
 # video codecs
 opi codecs
 
-# flatpak
-sudo zypper in -y flatpak
+# package utils
+sudo zypper in -y flatpak dpkg
 
 # xinput
 sudo zypper in -y xinput xev
