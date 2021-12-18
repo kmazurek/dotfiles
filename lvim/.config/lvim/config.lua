@@ -10,11 +10,6 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
-
-vim.opt.mouse = "n"
-vim.opt.relativenumber = true
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -43,12 +38,9 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --   },
 -- }
 
--- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -138,38 +130,18 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   },
 -- }
 
--- Additional Plugins
+-- Autocommands (https://neovim.io/doc/user/autocmd.html)
+-- lvim.autocommands.custom_groups = {
+--   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
+-- }
+
+-- Additional plugins
 lvim.plugins = {
-  {"wellle/targets.vim"},
-  {"folke/tokyonight.nvim"},
-  {"sainnhe/gruvbox-material"},
-  {"simrat39/symbols-outline.nvim"},
-  {"troydm/zoomwintab.vim"},
   {
     "bkad/CamelCaseMotion",
     config = function()
       vim.g.camelcasemotion_key = ","
     end,
-  },
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
-  {
-    "phaazon/hop.nvim",
-    event = "BufRead",
-    config = function()
-      require("hop").setup()
-      local opts = { noremap = true, silent = true }
-      vim.api.nvim_set_keymap("n", "s", ":HopWord<CR>", opts)
-    end,
-  },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function()
-      require "lsp_signature".setup()
-    end
   },
   {
 		"ethanholz/nvim-lastplace",
@@ -184,33 +156,76 @@ lvim.plugins = {
 			})
 		end,
 	},
+  {"folke/tokyonight.nvim"},
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+  {
+    "phaazon/hop.nvim",
+    event = "BufRead",
+    config = function()
+      require("hop").setup()
+    end,
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function()
+      require("lsp_signature").setup()
+    end,
+  },
+  {"sainnhe/gruvbox-material"},
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      vim.g.symbols_outline = {
+        auto_preview = false,
+        relative_width = true,
+        symbol_blacklist = { "Variable" },
+        width = 35,
+      }
+    end,
+  },
   {
     "sQVe/sort.nvim",
     config = function()
       require("sort").setup()
-    end
+    end,
   },
+  {"troydm/zoomwintab.vim"},
+  {"wellle/targets.vim"},
 }
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
-
+-- Vim options
 vim.opt.mouse = ""
-vim.opt.timeoutlen = 300
+vim.opt.relativenumber = true
 vim.opt.scrolloff = 0
+vim.opt.timeoutlen = 300
 
+-- Set colorscheme
+lvim.builtin.lualine.theme = "gruvbox-material"
+lvim.colorscheme = "gruvbox-material"
+
+-- Code formatting
+lvim.format_on_save = true
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { exe = "black", filetypes = { "python" } },
 }
 
-lvim.format_on_save = true
-
 -- Custom which-key bindings
+
+lvim.builtin.which_key.mappings["<Space>"] = {
+  "<cmd>HopWord<cr>", "Hop word mode"
+}
+
 lvim.builtin.which_key.mappings["h"] = {
   "<cmd>Telescope oldfiles<cr>", "Recent files"
+}
+
+lvim.builtin.which_key.mappings["lo"] = {
+  "<cmd>SymbolsOutline<cr>", "Toggle symbols outline"
 }
 
 lvim.builtin.which_key.mappings["p"] = {
@@ -229,21 +244,6 @@ lvim.builtin.which_key.mappings["q"] = {
   "<cmd>Telescope live_grep<cr>", "Toggle symbols outline"
 }
 
-lvim.builtin.which_key.mappings["lo"] = {
-  "<cmd>SymbolsOutline<cr>", "Toggle symbols outline"
-}
-
-lvim.builtin.which_key.mappings["x"] = {
-  name = "+Splits",
-  h = {"<cmd>split<cr>", "Split horizontally"},
-  v = {"<cmd>vsplit<cr>", "Split vertically"},
-  x = {"<cmd>q<cr>", "Close split"},
-}
-
-lvim.builtin.which_key.mappings["zz"] = {
-  "<cmd>ZoomWinTabToggle<cr>", "Toggle zoom"
-}
-
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
@@ -259,6 +259,17 @@ lvim.builtin.which_key.mappings["w"] = {
   "<cmd>Telescope grep_string<cr>", "Search for string under cursor"
 }
 
+lvim.builtin.which_key.mappings["x"] = {
+  name = "+Splits",
+  h = {"<cmd>split<cr>", "Split horizontally"},
+  v = {"<cmd>vsplit<cr>", "Split vertically"},
+  x = {"<cmd>q<cr>", "Close split"},
+}
+
+lvim.builtin.which_key.mappings["zz"] = {
+  "<cmd>ZoomWinTabToggle<cr>", "Toggle zoom"
+}
+
 -- Navigation between splits
 lvim.keys.normal_mode["<A-h>"] = "<C-W><C-H>"
 lvim.keys.normal_mode["<A-j>"] = "<C-W><C-J>"
@@ -268,38 +279,12 @@ lvim.keys.normal_mode["<A-l>"] = "<C-W><C-L>"
 -- Clear search highlighting
 lvim.keys.normal_mode["<Backspace>"] = "<cmd>nohlsearch<cr>"
 
--- Use Enter to select auto-completion
--- lvim.builtin.cmp.mapping["<CR>"] = lvim.builtin.cmp.mapping["<Tab>"]
+-- Built-in plugins configuration
 
-lvim.builtin.lualine.theme = "gruvbox-material"
-lvim.colorscheme = "gruvbox-material"
-
-lvim.builtin.nvimtree.setup.view.width = 40
-
-vim.g.symbols_outline = {
-  auto_preview = false,
-  relative_width = true,
-  symbol_blacklist = { "Variable" },
-  width = 35,
-}
-
+-- lualine.nvim
 lvim.builtin.lualine.sections.lualine_c = {'location'}
 
-local telescope_actions = require "telescope.actions"
-
-lvim.builtin.telescope.defaults.mappings.i["C-v"] = telescope_actions.select_vertical
-lvim.builtin.telescope.defaults.mappings.i["C-h"] = telescope_actions.select_horizontal
-
-lvim.builtin.telescope.defaults.layout_strategy = "flex"
--- When window width it 150 or less: use the vertical layout
-lvim.builtin.telescope.defaults.layout_config.flex = { flip_columns = 150 }
--- Width of the Telescope overlay, defined as percentage of the window's width
-lvim.builtin.telescope.defaults.layout_config.width = 0.90
-
-vim.g.dashboard_enable_session = 0
-
-vim.cmd [[inoremap <silent><expr> <cr> pumvisible() ? cmp#complete() : "\<C-g>u\<CR>"]]
-
+-- nvim-cmp
 local cmp = require "cmp"
 -- Set up <CR> to accept first result from autocomplete
 local completion_func = function(fallback)
@@ -310,3 +295,19 @@ local completion_func = function(fallback)
   end
 end
 lvim.builtin.cmp.mapping["<CR>"] = completion_func
+
+-- nvim-tree.lua
+lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.width = 40
+lvim.builtin.nvimtree.show_icons.git = 1
+
+-- telescope.nvim
+local telescope_actions = require "telescope.actions"
+lvim.builtin.telescope.defaults.mappings.i["C-v"] = telescope_actions.select_vertical
+lvim.builtin.telescope.defaults.mappings.i["C-h"] = telescope_actions.select_horizontal
+
+lvim.builtin.telescope.defaults.layout_strategy = "flex"
+-- When window width it 150 or less: use the vertical layout
+lvim.builtin.telescope.defaults.layout_config.flex = { flip_columns = 150 }
+-- Width of the Telescope overlay, defined as percentage of the window's width
+lvim.builtin.telescope.defaults.layout_config.width = 0.90
