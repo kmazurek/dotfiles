@@ -1,3 +1,4 @@
 .venv
 .vim
 .vimspector.json
+pyrightconfig.json
