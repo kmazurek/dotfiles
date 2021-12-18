@@ -160,6 +160,7 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
+  {"machakann/vim-sandwich"},
   {
     "phaazon/hop.nvim",
     event = "BufRead",
