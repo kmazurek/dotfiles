@@ -217,10 +217,6 @@ formatters.setup {
 
 -- Custom which-key bindings
 
-lvim.builtin.which_key.mappings["<Space>"] = {
-  "<cmd>HopWord<cr>", "Hop word mode"
-}
-
 lvim.builtin.which_key.mappings["h"] = {
   "<cmd>Telescope oldfiles<cr>", "Recent files"
 }
@@ -271,7 +267,13 @@ lvim.builtin.which_key.mappings["zz"] = {
   "<cmd>ZoomWinTabToggle<cr>", "Toggle zoom"
 }
 
--- Navigation between splits
+-- Navigation
+
+-- hop.nvim
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "<CR>", ":HopWord<CR>", opts)
+
+-- Moving between splits
 lvim.keys.normal_mode["<A-h>"] = "<C-W><C-H>"
 lvim.keys.normal_mode["<A-j>"] = "<C-W><C-J>"
 lvim.keys.normal_mode["<A-k>"] = "<C-W><C-K>"
