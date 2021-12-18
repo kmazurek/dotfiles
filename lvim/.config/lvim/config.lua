@@ -193,6 +193,7 @@ lvim.plugins = {
       require("sort").setup()
     end,
   },
+  {"tpope/vim-repeat"},
   {"troydm/zoomwintab.vim"},
   {"wellle/targets.vim"},
 }
