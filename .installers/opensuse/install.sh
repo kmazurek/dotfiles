@@ -12,3 +12,6 @@ sudo zypper in -y flatpak dpkg
 
 # xinput
 sudo zypper in -y xinput xev
+
+# browserpass
+sudo zypper in browserpass-native
