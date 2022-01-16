@@ -58,6 +58,5 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 au CursorHoldI * stopinsert
 
 " Emulated extensions
-set commentary
-set surround
-set easymotion
+Plug 'tpope/vim-commentary'
+Plug 'machakann/vim-highlightedyank'
