@@ -181,6 +181,9 @@ lvim.plugins = {
     config = function()
       vim.g.symbols_outline = {
         auto_preview = false,
+        keymaps = {
+          goto_location = "<C-Cr>",
+        },
         relative_width = true,
         symbol_blacklist = { "Variable" },
         width = 35,
@@ -193,6 +196,7 @@ lvim.plugins = {
       require("sort").setup()
     end,
   },
+  {"tpope/vim-fugitive"},
   {"tpope/vim-repeat"},
   {"troydm/zoomwintab.vim"},
   {"wellle/targets.vim"},
@@ -216,6 +220,18 @@ formatters.setup {
 }
 
 -- Custom which-key bindings
+
+lvim.builtin.which_key.mappings["G"] = {
+  name = "+Conflicts",
+  h = {"<cmd>diffget //2<cr>", "Apply left (our) version of hunk"},
+  j = {"]c", "Jump to next hunk"},
+  k = {"[c", "Jump to previous hunk"},
+  l = {"<cmd>diffget //3<cr>", "Apply right (their) version of hunk"},
+  p = {"<cmd>diffput //1<cr>", "Apply hunk to the working copy"},
+  r = {"<cmd>Gvdiffsplit!<cr>", "Vertical three-way resolution"},
+  R = {"<cmd>Gvdiffsplit!<cr>", "Vertical three-way resolution"},
+  w = {"<cmd>Gwrite!<cr>", "Write file to to git index and stage it"},
+}
 
 lvim.builtin.which_key.mappings["h"] = {
   "<cmd>Telescope oldfiles<cr>", "Recent files"
@@ -314,3 +330,5 @@ lvim.builtin.telescope.defaults.layout_strategy = "flex"
 lvim.builtin.telescope.defaults.layout_config.flex = { flip_columns = 150 }
 -- Width of the Telescope overlay, defined as percentage of the window's width
 lvim.builtin.telescope.defaults.layout_config.width = 0.90
+
+lvim.builtin.telescope.defaults.path_display = { "truncate" }
