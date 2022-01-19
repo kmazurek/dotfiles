@@ -183,9 +183,6 @@ lvim.plugins = {
     config = function()
       vim.g.symbols_outline = {
         auto_preview = false,
-        keymaps = {
-          goto_location = "<C-Cr>",
-        },
         relative_width = true,
         symbol_blacklist = { "Variable" },
         width = 35,
@@ -288,8 +285,8 @@ lvim.builtin.which_key.mappings["zz"] = {
 -- Navigation
 
 -- hop.nvim
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<CR>", ":HopWord<CR>", opts)
+vim.api.nvim_set_keymap("n", "<CR>", ":HopWord<CR>", { noremap = true, silent = true })
+lvim.keys.normal_mode["<Leader><CR>"] = "<CR>"
 
 -- Moving between splits
 lvim.keys.normal_mode["<A-h>"] = "<C-W><C-H>"
