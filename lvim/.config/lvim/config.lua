@@ -331,3 +331,6 @@ lvim.builtin.telescope.defaults.layout_config.flex = { flip_columns = 150 }
 lvim.builtin.telescope.defaults.layout_config.width = 0.90
 
 lvim.builtin.telescope.defaults.path_display = { "truncate" }
+
+local treesitter = lvim.builtin.treesitter
+table.insert(treesitter.indent.disable, "python")
