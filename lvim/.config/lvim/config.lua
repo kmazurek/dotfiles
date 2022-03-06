@@ -39,9 +39,13 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- }
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+lvim.builtin.dap.active = true
 lvim.builtin.dashboard.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
+
+local dap_install = require("dap-install")
+dap_install.config("python", {})
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -163,6 +167,8 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   {"machakann/vim-sandwich"},
+  {"mfussenegger/nvim-dap-python"},
+  {"nvim-telescope/telescope-dap.nvim"},
   {
     "phaazon/hop.nvim",
     event = "BufRead",
@@ -171,6 +177,7 @@ lvim.plugins = {
     end,
   },
   {
+  {"rcarriga/nvim-dap-ui"},
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function()
@@ -201,6 +208,22 @@ lvim.plugins = {
   {"wellle/targets.vim"},
 }
 
+require("dapui").setup({
+  sidebar = {
+    size = 60,
+    elements = {
+      {
+        id = "scopes",
+        size = 0.5,
+      },
+      { id = "stacks", size = 0.25 },
+      { id = "breakpoints", size = 0.25 },
+    }
+  }
+})
+require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+require("dap-python").test_runner = "pytest"
+
 -- Vim options
 vim.opt.mouse = ""
 vim.opt.relativenumber = true
@@ -219,6 +242,25 @@ formatters.setup {
 }
 
 -- Custom which-key bindings
+
+lvim.builtin.which_key.mappings["d"] = {
+  name = "+Debugging",
+  b = {"<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint"},
+  c = {"<cmd>lua require('dap').run_to_cursor()<cr>", "Continue execution until current cursor line"},
+  f = {"<cmd>Telescope dap frames<cr>", "List Stack frames"},
+  h = {"<cmd>lua require('dap').step_back()<cr>", "Step back a single step"},
+  j = {"<cmd>lua require('dap').step_into()<cr>", "Step into a function"},
+  k = {"<cmd>lua require('dap').step_out()<cr>", "Step out of a function"},
+  l = {"<cmd>lua require('dap').step_over()<cr>", "Step over a single step"},
+  p = {"<cmd>Telescope dap list_breakpoints<cr>", "List breakpoints"},
+  r = {"<cmd>lua require('dap').continue()<cr>", "Run/resume the debugger"},
+  s = {"<cmd>lua require('dap').terminate()<cr>", "Stop the debugging session"},
+  t = {"<cmd>lua require('dap-python').test_method()<cr>", "Debug test method under cursor"},
+  u = {"<cmd>lua require('dapui').toggle()<cr>", "Toggle debugger UI"},
+  v = {"<cmd>Telescope dap variables<cr>", "List local variables"},
+  J = {"<cmd>lua require('dap').down()<cr>", "Go down one stack frame"},
+  K = {"<cmd>lua require('dap').up()<cr>", "Go up one stack frame"},
+}
 
 lvim.builtin.which_key.mappings["G"] = {
   name = "+Conflicts",
@@ -331,6 +373,8 @@ lvim.builtin.telescope.defaults.layout_config.flex = { flip_columns = 150 }
 lvim.builtin.telescope.defaults.layout_config.width = 0.90
 
 lvim.builtin.telescope.defaults.path_display = { "truncate" }
+require('telescope').load_extension('dap')
 
+-- Treesitter
 local treesitter = lvim.builtin.treesitter
 table.insert(treesitter.indent.disable, "python")
