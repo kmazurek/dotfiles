@@ -12,7 +12,16 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore-global
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
 [push]
     followTags = true   # Push new tags by default
 [color]
