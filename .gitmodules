@@ -16,3 +16,6 @@
 [submodule "zsh/.zsh/plugins/fzf"]
 	path = zsh/.zsh/plugins/fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule "ranger/.config/ranger/plugins/ranger-archives"]
+	path = ranger/.config/ranger/plugins/ranger-archives
+	url = git@github.com:maximtrp/ranger-archives.git
