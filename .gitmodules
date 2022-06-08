@@ -19,3 +19,6 @@
 [submodule "ranger/.config/ranger/plugins/ranger-archives"]
 	path = ranger/.config/ranger/plugins/ranger-archives
 	url = git@github.com:maximtrp/ranger-archives.git
+[submodule "ranger/.config/ranger/plugins/ranger-sox"]
+	path = ranger/.config/ranger/plugins/ranger-sox
+	url = git@github.com:madskjeldgaard/ranger-sox.git
