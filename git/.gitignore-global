@@ -2,3 +2,4 @@
 .vim
 .vimspector.json
 pyrightconfig.json
+.idea
