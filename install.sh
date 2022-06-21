@@ -38,33 +38,43 @@ link_package() {
     fi
 }
 
-set_distro_name() {
-    if ! [ -f /etc/os-release ]; then
-        echo "Cannot determine distro: /etc/os-release doesn't exist"
-	exit 1
-    fi
+set_os_name() {
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        if ! [ -f /etc/os-release ]; then
+            echo "Cannot determine Linux distro: /etc/os-release doesn't exist"
+	    exit 1
+        fi
 
-    source /etc/os-release
-    export DISTRO=$NAME
+        source /etc/os-release
+        export OSNAME=$NAME
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        export OSNAME="MacOS"
+    else
+        echo "Unsupported OS: $OSTYPE"
+        exit 1
+    fi
 }
 
 set_install_cmd() {
-    case "$DISTRO" in
+    case "$OSNAME" in
         *openSUSE*)
 	    export INSTALL_CMD="sudo zypper in -y"
 	    ;;
         *Ubuntu*)
 	    export INSTALL_CMD="sudo apt install -y"
 	    ;;
+        *MacOS*)
+	    export INSTALL_CMD="brew install"
+	    ;;
 	*)
-	    echo "Unrecognized distro: $DISTRO"
+	    echo "Unrecognized OS: $OSNAME"
 	    exit 1
 	    ;;
      esac
 }
 
 main() {
-    set_distro_name
+    set_os_name
     set_install_cmd
     # If any arguments were passed in, use them as the list of packages to install
     if [ $# -eq 0 ]; then
@@ -76,8 +86,8 @@ main() {
 
     # Install packages
     for pkg in $pkgs; do
-        link_package $pkg
         install_package $pkg
+        link_package $pkg
     done
 }
 
