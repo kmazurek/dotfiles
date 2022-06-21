@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-case "$DISTRO" in
+case "$OSNAME" in
     *openSUSE*)
         $INSTALL_CMD password-store
         ;;
@@ -13,6 +13,6 @@ esac
 $INSTALL_CMD fzf
 
 key="0x53507E32EE45F70D"
-gpg --keyserver pgp.mit.edu --recv-key $key
+gpg --recv-key $key
 # used to set ultimate trust for the imported key
 gpg --edit-key $key
