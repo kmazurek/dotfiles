@@ -1,8 +1,8 @@
 export WORKON_HOME=~/.virtualenvs
 mkdir -p $WORKON_HOME
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
-source ~/.local/bin/virtualenvwrapper.sh
+pyenv virtualenvwrapper
 
 function venv_chpwd_hook() {
     test -e .venv && workon $(cat .venv)
