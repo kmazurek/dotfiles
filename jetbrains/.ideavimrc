@@ -1,3 +1,10 @@
+" Installed plugins
+" AceJump
+" Action Tracker
+" Ataman
+" IdeaVim
+" Tab Shifter
+
 syntax on                           " Syntax highlighting
 filetype plugin indent on           " Detect file types
 
@@ -50,13 +57,15 @@ set directory^=$HOME/.vim/tmp//
 " (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
 
-" Remove all trailing whitespaces
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
-" Automatically leave insert mode after 'updatetime' milliseconds of
-" inactivity
-au CursorHoldI * stopinsert
-
 " Emulated extensions
-Plug 'tpope/vim-commentary'
-Plug 'machakann/vim-highlightedyank'
+set commentary
+set surround
+
+" Required by Ataman plugin to work
+nnoremap <Space> :action LeaderAction<cr>
+vnoremap <Space> :action LeaderAction<cr>
+
+" Press Return to activate AceJump
+map <CR> :action AceAction<CR>
+" " Press `F` to activate Target Mode
+map F :action AceTargetAction<CR>
