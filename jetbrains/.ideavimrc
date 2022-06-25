@@ -1,8 +1,8 @@
 " Installed plugins
-" AceJump
 " Action Tracker
 " Ataman
 " IdeaVim
+" KJump
 " Tab Shifter
 
 syntax on                           " Syntax highlighting
@@ -65,7 +65,5 @@ set surround
 nnoremap <Space> :action LeaderAction<cr>
 vnoremap <Space> :action LeaderAction<cr>
 
-" Press Return to activate AceJump
-map <CR> :action AceAction<CR>
-" " Press `F` to activate Target Mode
-map F :action AceTargetAction<CR>
+" Press Return to activate KJump
+map <CR> :action KJumpAction.Word0<CR>
