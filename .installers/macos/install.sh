@@ -13,4 +13,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install findutils
 PATH=$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH
 
-brew install gpg-suite pinentry-mac
+brew install openssl gpg-suite pinentry-mac
