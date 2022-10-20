@@ -37,3 +37,6 @@ if $(which fzf &>/dev/null); then
     source $PLUGINS/fzf/shell/completion.zsh
     source $PLUGINS/fzf/shell/key-bindings.zsh
 fi
+
+# Load zmv (zsh batch renamer)
+autoload zmv
