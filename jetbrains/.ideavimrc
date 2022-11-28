@@ -4,6 +4,7 @@
 " Frame Switcher
 " IdeaVim
 " KJump
+" Project Opener
 " Tab Shifter
 
 syntax on                           " Syntax highlighting
@@ -58,10 +59,6 @@ set directory^=$HOME/.vim/tmp//
 " (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
 
-" Emulated extensions
-set commentary
-set surround
-
 " Required by Ataman plugin to work
 nnoremap <Space> :action LeaderAction<cr>
 vnoremap <Space> :action LeaderAction<cr>
@@ -71,4 +68,20 @@ nnoremap <S-k> :action QuickJavaDoc<cr>
 nnoremap <S-l> :action NextTab<cr>
 
 " Press Return to activate KJump
-map <CR> :action KJumpAction.Word0<CR>
+nnoremap <CR> :action KJumpAction.Word0<CR>
+
+" Code navigation
+nnoremap gi :action GotoImplementation<CR>
+
+Plug 'kana/vim-textobj-entire'
+
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_color = "rgba(133, 153, 0, 75)"
+let g:highlightedyank_highlight_duration = "500"
+
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'vim-matchit'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'vim-scripts/ReplaceWithRegister'
