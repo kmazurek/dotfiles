@@ -71,10 +71,12 @@ nnoremap <S-l> :action NextTab<cr>
 nnoremap <CR> :action KJumpAction.Word0<CR>
 
 " Code navigation
-nnoremap gc :action GotoClass<CR>
 nnoremap gd :action GotoDeclaration<CR>
+nnoremap gf :action GotoFile<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gs :action GotoSymbol<CR>
+nnoremap gw :action FindInPath<CR>
+nnoremap gt :action GotoTest<CR>
 
 " Jump to last active window/tool
 nnoremap <Tab> :action JumpToLastWindow<CR>
