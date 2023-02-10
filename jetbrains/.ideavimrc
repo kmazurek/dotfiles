@@ -6,6 +6,7 @@
 " KJump
 " Project Opener
 " Tab Shifter
+" GitLink
 
 syntax on                           " Syntax highlighting
 filetype plugin indent on           " Detect file types
@@ -72,11 +73,25 @@ nnoremap <CR> :action KJumpAction.Word0<CR>
 
 " Code navigation
 nnoremap gd :action GotoDeclaration<CR>
+vnoremap gd :action GotoDeclaration<CR>
+
 nnoremap gf :action GotoFile<CR>
+vnoremap gf :action GotoFile<CR>
+
 nnoremap gi :action GotoImplementation<CR>
+vnoremap gi :action GotoImplementation<CR>
+
 nnoremap gs :action GotoSymbol<CR>
+vnoremap gs :action GotoSymbol<CR>
+
 nnoremap gw :action FindInPath<CR>
+vnoremap gw :action FindInPath<CR>
+
 nnoremap gt :action GotoTest<CR>
+vnoremap gt :action GotoTest<CR>
+
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
 
 " Jump to last active window/tool
 nnoremap <Tab> :action JumpToLastWindow<CR>
