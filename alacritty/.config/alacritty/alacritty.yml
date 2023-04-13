@@ -127,7 +127,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 11.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -153,10 +153,6 @@ font:
   # `use_thin_strokes` to `true` and enable font smoothing by running the
   # following command:
   #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
