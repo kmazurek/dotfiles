@@ -3,3 +3,5 @@
 .vimspector.json
 pyrightconfig.json
 .idea
+.nvmrc
+.ignore
