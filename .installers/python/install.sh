@@ -1,4 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
-pip install black mypy virtualenvwrapper
+case "$DISTRO" in
+    *openSUSE*)
+        opi virtualenvwrapper
+        ;;
+    *)
+        $INSTALL_CMD virtualenvwrapper
+        ;;
+esac
+
+pip install black mypy
