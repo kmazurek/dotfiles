@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-case "$DISTRO" in
+case "$OSNAME" in
     *Ubuntu*)
         sudo add-apt-repository ppa:mmstick76/alacritty
         $INSTALL_CMD alacritty

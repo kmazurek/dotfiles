@@ -1,4 +1,4 @@
 #!/bin/bash
 set -euo pipefail
 
-$INSTALL_CMD cargo
+curl https://sh.rustup.rs -sSf | sh

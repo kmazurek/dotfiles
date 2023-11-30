@@ -8,7 +8,10 @@
 [user]
 	email = zakaprov@gmail.com
 	name = Kuba Mazurek
-	signingkey = 0x53507E32EE45F70D
+
+[includeIf "gitdir:~/code/gitlab.com/junitechnology/"]
+    path = ~/.gitconfig_juni
+
 [core]
     editor = vim
     excludesfile = ~/.gitignore-global
@@ -38,5 +41,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-[commit]
-	gpgsign = true
+[url "git@gitlab.com:"]
+    insteadOf = https://gitlab.com/

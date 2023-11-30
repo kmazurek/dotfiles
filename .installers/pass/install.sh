@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-case "$DISTRO" in
+case "$OSNAME" in
     *openSUSE*)
         $INSTALL_CMD password-store pinentry-gtk2
         ;;

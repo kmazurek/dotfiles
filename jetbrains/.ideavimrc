@@ -1,3 +1,13 @@
+" Installed plugins
+" Action Tracker
+" Ataman
+" Frame Switcher
+" IdeaVim
+" KJump
+" Project Opener
+" Tab Shifter
+" GitLink
+
 syntax on                           " Syntax highlighting
 filetype plugin indent on           " Detect file types
 
@@ -50,13 +60,51 @@ set directory^=$HOME/.vim/tmp//
 " (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
 
-" Remove all trailing whitespaces
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" Required by Ataman plugin to work
+nnoremap <Space> :action LeaderAction<cr>
+vnoremap <Space> :action LeaderAction<cr>
 
-" Automatically leave insert mode after 'updatetime' milliseconds of
-" inactivity
-au CursorHoldI * stopinsert
+nnoremap <S-h> :action PreviousTab<cr>
+nnoremap <S-k> :action QuickJavaDoc<cr>
+nnoremap <S-l> :action NextTab<cr>
 
-" Emulated extensions
-Plug 'tpope/vim-commentary'
+" Press Return to activate KJump
+nnoremap <CR> :action KJumpAction.Word0<CR>
+
+" Code navigation
+nnoremap gd :action GotoDeclaration<CR>
+vnoremap gd :action GotoDeclaration<CR>
+
+nnoremap gf :action GotoFile<CR>
+vnoremap gf :action GotoFile<CR>
+
+nnoremap gi :action GotoImplementation<CR>
+vnoremap gi :action GotoImplementation<CR>
+
+nnoremap gs :action GotoSymbol<CR>
+vnoremap gs :action GotoSymbol<CR>
+
+nnoremap gw :action FindInPath<CR>
+vnoremap gw :action FindInPath<CR>
+
+nnoremap gt :action GotoTest<CR>
+vnoremap gt :action GotoTest<CR>
+
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+
+" Jump to last active window/tool
+nnoremap <Tab> :action JumpToLastWindow<CR>
+
+Plug 'kana/vim-textobj-entire'
+
 Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_color = "rgba(133, 153, 0, 75)"
+let g:highlightedyank_highlight_duration = "500"
+
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'vim-matchit'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'vim-scripts/ReplaceWithRegister'
