@@ -6,8 +6,8 @@ setopt NO_NOMATCH
 setopt autocd
 
 # Set default editor
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 
 # Initialize plugins
 PLUGINS=~/.zsh/plugins
