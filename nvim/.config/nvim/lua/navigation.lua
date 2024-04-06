@@ -10,4 +10,11 @@ vim.keymap.set('n', '<A-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<A-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<A-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<A-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Creating new windows
+vim.keymap.set('n', '<leader>xh', '<cmd>split<CR>', { desc = 'Split horizontally' })
+vim.keymap.set('n', '<leader>xv', '<cmd>vsplit<CR>', { desc = 'Split vertically' })
+
+-- Managing open windows
+vim.keymap.set('n', '<leader>xq', '<cmd>only<CR>', { desc = 'Close all other windows' })
 -- vim: ts=2 sts=2 sw=2 et
