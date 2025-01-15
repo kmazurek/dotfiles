@@ -1,10 +1,15 @@
-theme="noctis_bordo"
+theme="boo_berry_kuba"
+# theme="noctis_bordo"
+# theme="monokai_pro_ristretto"
 
 [editor]
+bufferline="multiple" # show top buffer bar when more than one buffer is open
 completion-trigger-len=1
+completion-timeout=100
 cursorline=true
 line-number="relative"
 idle-timeout=100
+end-of-line-diagnostics = "hint" # show end-of-line diagnostic for HINT level and above
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,10 +17,14 @@ normal = "block"
 select = "underline"
 
 [editor.indent-guides]
-render=true
+render = true
+skip-levels = 1
+
+[editor.inline-diagnostics]
+cursor-line = "warning" # show detailed diagnostics for WARNING level and above when on that line
 
 [editor.lsp]
-display-inlay-hints = false
+display-inlay-hints = true
 goto-reference-include-declaration = false
 
 [editor.soft-wrap]
@@ -31,6 +40,12 @@ A-h = "jump_view_left"
 A-j = "jump_view_down"
 A-k = "jump_view_up"
 A-l = "jump_view_right"
+S-h = "goto_previous_buffer"
+S-l = "goto_next_buffer"
+"*" = ["search_selection", "make_search_word_bounded", "search_next"]
+
+# TODO map the below to something nice!
+# H = { a = "goto_prev_parameter", d = "goto_prev_diag", f = "goto_prev_function"}
 
 [keys.select]
 ret = "goto_word"
@@ -38,4 +53,3 @@ ret = "goto_word"
 [keys.normal."space"]
 x = { v = "vsplit", h = "hsplit"}
 C-c = { c = "command_palette", o = ":config-open", r = ":config-reload"}
-
