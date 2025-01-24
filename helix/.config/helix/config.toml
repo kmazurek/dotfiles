@@ -36,12 +36,17 @@ right = ["version-control", "diagnostics", "selections", "register", "position",
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
 ret = "goto_word"
+
 A-h = "jump_view_left"
 A-j = "jump_view_down"
 A-k = "jump_view_up"
 A-l = "jump_view_right"
+
 S-h = "goto_previous_buffer"
 S-l = "goto_next_buffer"
+
+C-x = ":reset-diff-change"
+
 "*" = ["search_selection", "make_search_word_bounded", "search_next"]
 
 # TODO map the below to something nice!
@@ -53,3 +58,4 @@ ret = "goto_word"
 [keys.normal."space"]
 x = { v = "vsplit", h = "hsplit"}
 C-c = { c = "command_palette", o = ":config-open", r = ":config-reload"}
+q = ":buffer-close"
