@@ -1,6 +1,6 @@
-theme="boo_berry_kuba"
+# theme="boo_berry_kuba"
 # theme="noctis_bordo"
-# theme="monokai_pro_ristretto"
+theme="monokai_pro_ristretto"
 
 [editor]
 bufferline="multiple" # show top buffer bar when more than one buffer is open
