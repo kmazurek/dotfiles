@@ -8,7 +8,7 @@ keybinding:
 
 git:
   paging:
-    colorArg: always
+    colorArg: never
     pager: delta --dark --paging=never
     useConfig: false
 
