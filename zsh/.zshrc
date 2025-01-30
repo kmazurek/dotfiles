@@ -1,4 +1,5 @@
 export PATH=$HOME/.local/bin:$PATH
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # in case of failed glob match, pass the bad match onto the command (e.g. fixes git HEAD^)
 setopt NO_NOMATCH
