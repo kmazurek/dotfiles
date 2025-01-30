@@ -10,6 +10,7 @@ cursorline=true
 line-number="relative"
 idle-timeout=100
 end-of-line-diagnostics = "hint" # show end-of-line diagnostic for HINT level and above
+scrolloff = 0
 
 [editor.cursor-shape]
 insert = "bar"
