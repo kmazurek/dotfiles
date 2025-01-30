@@ -29,7 +29,7 @@ display-inlay-hints = true
 goto-reference-include-declaration = false
 
 [editor.soft-wrap]
-enable = true
+enable = false
 
 [editor.statusline]
 right = ["version-control", "diagnostics", "selections", "register", "position", "file-encoding"]
