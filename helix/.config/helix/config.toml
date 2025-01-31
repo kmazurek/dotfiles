@@ -47,6 +47,7 @@ S-h = "goto_previous_buffer"
 S-l = "goto_next_buffer"
 
 C-x = ":reset-diff-change"
+C-r = "redo"
 
 "*" = ["search_selection", "make_search_word_bounded", "search_next"]
 
