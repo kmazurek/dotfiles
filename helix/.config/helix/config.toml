@@ -28,6 +28,9 @@ cursor-line = "warning" # show detailed diagnostics for WARNING level and above 
 display-inlay-hints = true
 goto-reference-include-declaration = false
 
+[editor.smart-tab]
+enable = false
+
 [editor.soft-wrap]
 enable = false
 
