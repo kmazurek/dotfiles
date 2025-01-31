@@ -1,3 +1,3 @@
 # Set up zoxide
-# Createss "f <query>" and "fi" commands
-eval "$(zoxide init zsh --cmd f)"
+# Creates "cd <query>" and "cdi" commands
+eval "$(zoxide init zsh --cmd cd)"
