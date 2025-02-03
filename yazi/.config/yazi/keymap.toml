@@ -39,7 +39,7 @@ prepend_keymap = [
 
   # Search & filter
 	{ on = [ "s", "f" ],        run = "filter --smart",   desc = "Filter files" },
-	{ on = [ "s", "r" ],        run = "search --via=rg",  desc = "Search files by content via ripgrep" },
+	{ on = [ "s", "g" ],        run = "search --via=rg",  desc = "Search files by content via ripgrep" },
 	{ on = [ "s", "s" ],        run = "search --via=fd",  desc = "Search files by name via fd" },
 
   # Tabs
