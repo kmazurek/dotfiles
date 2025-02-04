@@ -1,1 +1,5 @@
 --glob=!Cargo.lock
+--glob=!.git
+
+--hidden
+--smart-case
