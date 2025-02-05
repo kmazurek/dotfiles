@@ -66,5 +66,5 @@ ret = "goto_word"
 
 [keys.normal."space"]
 x = { v = "vsplit", h = "hsplit"}
-C-c = { c = "command_palette", o = ":config-open", r = ":config-reload"}
+H = { c = "command_palette", o = ":config-open", r = ":config-reload"}
 q = ":buffer-close"
