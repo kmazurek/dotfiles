@@ -59,8 +59,7 @@ C-r = "redo"
 
 "*" = ["search_selection", "make_search_word_bounded", "search_next"]
 
-# TODO map the below to something nice!
-# H = { a = "goto_prev_parameter", d = "goto_prev_diag", f = "goto_prev_function"}
+backspace = { a = "goto_next_parameter", d = "goto_next_diag", f = "goto_next_function",  A = "goto_prev_parameter", D = "goto_prev_diag", F = "goto_prev_function" }
 
 [keys.select]
 ret = "goto_word"
