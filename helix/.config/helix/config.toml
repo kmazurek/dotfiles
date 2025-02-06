@@ -62,7 +62,7 @@ C-r = "redo"
 backspace = { a = "goto_next_parameter", d = "goto_next_diag", f = "goto_next_function",  A = "goto_prev_parameter", D = "goto_prev_diag", F = "goto_prev_function" }
 
 [keys.select]
-ret = "goto_word"
+ret = "extend_to_word"
 
 [keys.normal."space"]
 x = { v = "vsplit", h = "hsplit"}
