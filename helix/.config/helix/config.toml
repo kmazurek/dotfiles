@@ -60,7 +60,10 @@ A-e = "move_next_sub_word_end"
 A-E = "move_prev_sub_word_end"
 
 S-h = "goto_previous_buffer"
+S-j = "rotate_selections_forward"
+S-k = "rotate_selections_backward"
 S-l = "goto_next_buffer"
+S-v = ["select_mode", "extend_line_below"]
 
 C-x = ":reset-diff-change"
 C-r = "redo"
@@ -69,6 +72,18 @@ C-r = "redo"
 
 [keys.select]
 ret = "extend_to_word"
+
+[keys.select."backspace"]
+a = "goto_next_parameter"
+A = "goto_prev_parameter"
+d = "goto_next_diag"
+D = "goto_prev_diag"
+f = "goto_next_function"
+F = "goto_prev_function" 
+g = "goto_next_change"
+G = "goto_prev_change"
+t = "goto_next_class"
+T = "goto_prev_class"
 
 [keys.normal."backspace"]
 a = "goto_next_parameter"
@@ -79,6 +94,8 @@ f = "goto_next_function"
 F = "goto_prev_function" 
 g = "goto_next_change"
 G = "goto_prev_change"
+t = "goto_next_class"
+T = "goto_prev_class"
 
 [keys.normal."space"]
 x = { v = "vsplit", h = "hsplit"}
@@ -87,3 +104,16 @@ q = ":buffer-close"
 s = "workspace_symbol_picker"
 S = "symbol_picker"
 space = "last_picker"
+
+# bucket of various bindings I don't use often enough to memorise
+[keys.normal."space".";"]
+a = "align_selections"
+c = "select_all_children"
+d = "remove_primary_selection"
+D = "remove_selections"
+k = "keep_selections"
+l = "switch_to_lowercase"
+n = "split_selection_on_newline"
+t = "trim_selections"
+s = "select_all_siblings"
+u = "switch_to_uppercase"
