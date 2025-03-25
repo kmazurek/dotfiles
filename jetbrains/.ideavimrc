@@ -81,6 +81,9 @@ vnoremap gf :action GotoFile<CR>
 nnoremap gi :action GotoImplementation<CR>
 vnoremap gi :action GotoImplementation<CR>
 
+nnoremap gu :action GotoSuperMethod<CR>
+vnoremap gu :action GotoSuperMethod<CR>
+
 nnoremap gs :action GotoSymbol<CR>
 vnoremap gs :action GotoSymbol<CR>
 
