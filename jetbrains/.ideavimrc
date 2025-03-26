@@ -111,3 +111,200 @@ Plug 'tpope/vim-surround'
 Plug 'vim-matchit'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/ReplaceWithRegister'
+
+" which-key bindings
+" set which-key
+" set notimeout
+" set timeoutlen=5000
+
+" let mapleader = " "
+
+" Buffers/tabs
+let g:WhichKeyDesc_buffer = "<leader>b Buffers/tabs..."
+
+nnoremap <leader>bd :action CloseContent<cr>
+let g:WhichKeyDesc_buffer_close = "<leader>bd Close buffer"
+
+nnoremap <leader>bD :action CloseAllEditors<cr>
+let g:WhichKeyDesc_buffer_close_all = "<leader>bD Close all buffers"
+
+nnoremap <leader>bs :action NewScratchBuffer<cr>
+let g:WhichKeyDesc_buffer_scratch = "<leader>bs New scratch buffer"
+
+nnoremap <leader>bu :action ReopenClosedTab<cr>
+let g:WhichKeyDesc_buffer_reopen = "<leader>bu Reopen closed buffer"
+
+" Code
+let g:WhichKeyDesc_code = "<leader>c Code..."
+
+nnoremap <leader>ca :action InspectCode<cr>
+let g:WhichKeyDesc_code_inspect = "<leader>ca Inspect code"
+
+nnoremap <leader>cc :action ChangeSignature<cr>
+let g:WhichKeyDesc_code_change_signature = "<leader>cc Change signature"
+
+let g:WhichKeyDesc_code_format = "<leader>cf Format..."
+
+nnoremap <leader>cff :action ReformatCode<cr>
+let g:WhichKeyDesc_code_format_reformat = "<leader>cff Reformat code"
+
+nnoremap <leader>cfs :action EditorSortLines<cr>
+let g:WhichKeyDesc_code_format_sort = "<leader>cfs Sort lines"
+
+nnoremap <leader>cr :action RenameElement<cr>
+let g:WhichKeyDesc_code_rename = "<leader>cr Rename element"
+
+" Debug
+let g:WhichKeyDesc_debug = "<leader>d Debug..."
+
+nnoremap <leader>db :action ToggleLineBreakpoint<cr>
+let g:WhichKeyDesc_debug_toggle_breakpoint = "<leader>db Toggle breakpoint"
+
+nnoremap <leader>dB :action ViewBreakpoints<cr>
+let g:WhichKeyDesc_debug_view_breakpoints = "<leader>dB View breakpoints"
+
+nnoremap <leader>dc :action ForceRunToCursor<cr>
+let g:WhichKeyDesc_debug_run_to_cursor = "<leader>dc Run to cursor"
+
+nnoremap <leader>de :action EvaluateExpression<cr>
+let g:WhichKeyDesc_debug_evaluate_expression = "<leader>de Evaluate expression"
+
+nnoremap <leader>dj :action StepInto<cr>
+let g:WhichKeyDesc_debug_step_into = "<leader>dj Step into"
+
+nnoremap <leader>dk :action StepOut<cr>
+let g:WhichKeyDesc_debug_step_out = "<leader>dk Step out"
+
+nnoremap <leader>dl :action StepOver<cr>
+let g:WhichKeyDesc_debug_step_over = "<leader>dl Step over"
+
+nnoremap <leader>dr :action Resume<cr>
+let g:WhichKeyDesc_debug_resume = "<leader>dr Resume"
+
+nnoremap <leader>ds :action Stop<cr>
+let g:WhichKeyDesc_debug_stop = "<leader>dr Stop"
+
+" Error
+let g:WhichKeyDesc_error = "<leader>e Error..."
+
+nnoremap <leader>ee :action ShowErrorDescription<cr>
+let g:WhichKeyDesc_error_description = "<leader>ee Show error description"
+
+nnoremap <leader>ej :action GotoNextError<cr>
+let g:WhichKeyDesc_error_go_to_next = "<leader>ej Go to next error"
+
+nnoremap <leader>ek :action GoToPreviousError<cr>
+let g:WhichKeyDesc_error_go_to_previous = "<leader>ek Go to previous error"
+
+" Git
+let g:WhichKeyDesc_git = "<leader>g Git..."
+
+nnoremap <leader>gb :action Git.Branches<cr>
+let g:WhichKeyDesc_git_branches = "<leader>gb Branches"
+
+nnoremap <leader>gB :action Annotate<cr>
+let g:WhichKeyDesc_git_blame = "<leader>gB Blame"
+
+nnoremap <leader>gc :action Git.ResolveConflicts<cr>
+let g:WhichKeyDesc_git_conflicts = "<leader>gc Resolve conflicts"
+
+nnoremap <leader>gC :action CheckinProject<cr>
+let g:WhichKeyDesc_git_commit = "<leader>gC Commit changes"
+
+nnoremap <leader>gd :action ChangesView.Revert<cr>
+let g:WhichKeyDesc_git_discard = "<leader>gd Discard (rollback) changes"
+
+nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<cr>
+let g:WhichKeyDesc_git_file_history = "<leader>gh Show file history"
+
+nnoremap <leader>gj :action VcsShowNextChangeMarker<cr>
+let g:WhichKeyDesc_git_next_change = "<leader>gj Go to next change"
+
+nnoremap <leader>gk :action VcsShowPrevChangeMarker<cr>
+let g:WhichKeyDesc_git_previous_change = "<leader>gk Go to previous change"
+
+nnoremap <leader>gl :action Vcs.Show.Local.Changes<cr>
+let g:WhichKeyDesc_git_ = "<leader>gl Show local changes"
+
+let g:WhichKeyDesc_git_merge = "<leader>gm Merge requests..."
+
+nnoremap <leader>gmb :action Majera.CodeReview.GitLab.CheckoutPullRequestBranch<cr>
+let g:WhichKeyDesc_git_merge_checkout_branch = "<leader>gmb Checkout review branch"
+
+nnoremap <leader>gp :action Git.Pull<cr>
+let g:WhichKeyDesc_git_pull = "<leader>gp Pull changes"
+
+nnoremap <leader>gP :action Vcs.Push<cr>
+let g:WhichKeyDesc_git_push = "<leader>gP Push changes"
+
+nnoremap <leader>gr :action Git.Rebase<cr>
+let g:WhichKeyDesc_git_rebase = "<leader>gr Rebase"
+
+nnoremap <leader>gs :action Git.Stash<cr>
+let g:WhichKeyDesc_git_stash = "<leader>gs Stash"
+
+nnoremap <leader>gS :action Git.Unstash<cr>
+let g:WhichKeyDesc_git_unstash = "<leader>gS Unstash"
+
+nnoremap <leader>gu :action uk.co.ben_gibson.git.link.ui.actions.menu.CopyAction<cr>
+let g:WhichKeyDesc_git_copy_url = "<leader>gu Copy URL to line"
+
+" Run
+let g:WhichKeyDesc_run = "<leader>r Run..."
+
+nnoremap <leader>rl :action Rerun<cr>
+let g:WhichKeyDesc_run_rerun_latest = "<leader>rl Rerun latest"
+
+nnoremap <leader>rr :action ChooseRunConfiguration<cr>
+let g:WhichKeyDesc_run_choose_config = "<leader>rr Choose run config"
+
+nnoremap <leader>rR :action RunAnything<cr>
+let g:WhichKeyDesc_run_run_anything = "<leader>rR Run anything"
+
+" Search/replace
+let g:WhichKeyDesc_search = "<leader>s Search/replace..."
+
+nnoremap <leader>sr :action Replace<cr>
+let g:WhichKeyDesc_search_replace_local = "<leader>sr Replace in file"
+
+nnoremap <leader>sR :action ReplaceInPath<cr>
+let g:WhichKeyDesc_search_replace_global = "<leader>sR Replace globally"
+
+nnoremap <leader>ss :action SearchEverywhere<cr>
+let g:WhichKeyDesc_search_everywhere = "<leader>ss Search everywhere"
+
+" Splits
+let g:WhichKeyDesc_split = "<leader>x Split..."
+
+nnoremap <leader>xh :action SplitHorizontally<cr>
+let g:WhichKeyDesc_split_horizontally = "<leader>xh Split horizontally"
+
+nnoremap <leader>xv :action SplitVertically<cr>
+let g:WhichKeyDesc_split_vertically = "<leader>xv Split vertically"
+
+" Windows
+let g:WhichKeyDesc_window = "<leader>w Windows..."
+
+nnoremap <leader>wf :action ActivateProjectToolWindow<cr>
+let g:WhichKeyDesc_window_show_file_tree = "<leader>wf Show file tree"
+
+" Global
+nnoremap <leader><return> :action HideActiveWindow<cr>
+
+nnoremap <leader>f :action GotoFile<cr>
+let g:WhichKeyDesc_go_to_file = "<leader>f Go to file"
+
+nnoremap <leader>i :action ShowIntentionActions<cr>
+let g:WhichKeyDesc_show_intents = "<leader>i Show intent actions"
+
+nnoremap <leader>o :action project-opener<cr>
+let g:WhichKeyDesc_projects = "<leader>o Open project"
+
+nnoremap <leader>p :action FrameSwitchAction<cr>
+let g:WhichKeyDesc_switch_project = "<leader>p Switch project"
+
+nnoremap <leader>q :action CloseEditor<cr>
+let g:WhichKeyDesc_close_active_tab = "<leader>q Close active tab"
+
+nnoremap <leader>Q :action CloseAllEditorsButActive<cr>
+let g:WhichKeyDesc_close_other_tabs = "<leader>S Close other tabs"
