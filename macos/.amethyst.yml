@@ -1,0 +1,136 @@
+layouts:
+    - fullscreen
+    - floating
+    - two-pane
+    - middle-wide
+    - column
+  # - tall
+  # - wide
+  # - widescreen-tall
+
+mod1:
+    - shift
+    - control
+    - command
+
+mod2:
+    - shift
+    - control
+    - option
+    - command
+
+# Layout switching
+cycle-layout:
+    mod: mod1
+    key: l
+
+cycle-layout-backward:
+    mod: mod1
+    key: h
+
+# Window focus
+focus-cw:
+    mod: mod1
+    key: k
+
+focus-ccw:
+    mod: mod1
+    key: j
+
+focus-main:
+    mod: mod1
+    key: m
+
+# Window swapping
+swap-cw:
+    mod: mod2
+    key: k
+
+swap-ccw:
+    mod: mod2
+    key: j
+
+swap-main:
+    mod: mod2
+    key: m
+
+# Space focus
+focus-space-1:
+    mod: mod1
+    key: 1
+
+focus-space-2:
+    mod: mod1
+    key: 2
+
+focus-space-3:
+    mod: mod1
+    key: 3
+
+focus-space-4:
+    mod: mod1
+    key: 4
+
+focus-space-5:
+    mod: mod1
+    key: 5
+
+focus-space-6:
+    mod: mod1
+    key: 6
+
+# Space throwing
+throw-space-1:
+    mod: mod2
+    key: 1
+
+throw-space-2:
+    mod: mod2
+    key: 2
+
+throw-space-3:
+    mod: mod2
+    key: 3
+
+throw-space-4:
+    mod: mod2
+    key: 4
+
+throw-space-5:
+    mod: mod2
+    key: 5
+
+throw-space-6:
+    mod: mod2
+    key: 6
+
+# Resizing
+expand-main:
+    mod: mod1
+    key: v
+
+shrink-main:
+    mod: mod1
+    key: c
+
+# Tiling config
+toggle-float:
+    mod: mod1
+    key: f
+
+toggle-tiling:
+    mod: mod1
+    key: t
+
+# Misc
+relaunch-amethyst:
+    mod: mod2
+    key: r
+
+# Enable focus-follows-mouse
+mouse-follows-focus: false
+focus-follows-mouse: false
+
+# Add 10px margin between windows
+window-margins: true
+rindow-margin-size: 4
