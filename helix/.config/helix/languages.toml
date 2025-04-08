@@ -4,3 +4,8 @@ plugins.black.enabled = true
 [[language]]
 name = "go"
 language-servers = [ { name = "gopls", except-features = [ "inlay-hints" ] } ]
+
+[[language]]
+name = "nix"
+auto-format = true
+formatter = { command = "nixfmt" }
