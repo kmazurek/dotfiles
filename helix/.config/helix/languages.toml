@@ -1,3 +1,11 @@
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "python"
+language-servers = ["ruff"]
+
 [language-server.pylsp.config.pylsp]
 plugins.black.enabled = true
 
