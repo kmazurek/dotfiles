@@ -1,3 +1,3 @@
 {
-	"gpgPath": "/opt/homebrew/bin/gpg"
+	"gpgPath": "/run/current-system/sw/bin/gpg"
 }
