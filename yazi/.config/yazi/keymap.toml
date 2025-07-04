@@ -44,7 +44,7 @@ prepend_keymap = [
 	{ on = [ "s", "s" ],        run = "search --via=fd",  desc = "Search files by name via fd" },
 
   # Archive & compression
-  { on = [ "C" ],        run = "plugin ouch",  desc = "Compress using ouch" },
+  { on = [ "C" ],  run = "plugin ouch",  desc = "Compress using ouch" },
 
   # Tabs
   { on = "H", run = "tab_switch -1 --relative", desc = "Switch to the previous tab" },
