@@ -13,6 +13,11 @@ use = "boydaihungst/mediainfo"
 rev = "0e2ae47"
 hash = "6656f2869ae2274a0e1860876f15186f"
 
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "d896656"
+hash = "62251f94eb67648d42cdfcfb8be0fad2"
+
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
 rev = "91fdfa7"

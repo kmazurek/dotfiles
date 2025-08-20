@@ -7,6 +7,7 @@ prepend_keymap = [
   { on = "d",          run = "remove --permanently",                      desc = "Permanently delete selected files" },
 	{ on = ["D", "r"],   run = '''shell 'ripdrag --all --and-exit "$@"'''', desc = "Drag and drop (ripdrag)" },
 	{ on = ["D", "d"],   run = '''shell 'drag "$@"'''',                     desc = "Drag and drop (dragterm)" },
+	{ on = "S",          run = "plugin what-size",                          desc = "Calculate size of selection or cwd" },
   { on = "f",          run = "plugin fzf",                                desc = "Jump to a file/directory via fzf" },
   { on = "z",          run = "plugin zoxide",                             desc = "Jump to a directory via zoxide" },
 	{ on = ";",          run = "shell $SHELL --block",                      desc = "Run a shell command" },
