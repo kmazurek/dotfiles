@@ -1,9 +1,9 @@
 export PATH=$HOME/.local/bin:$PATH
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# in case of failed glob match, pass the bad match onto the command (e.g. fixes git HEAD^)
+# In case of failed glob match, pass the bad match onto the command (e.g. fixes git HEAD^)
 setopt NO_NOMATCH
-# enable switching directories without `cd`
+# Enable switching directories without `cd`
 setopt autocd
 
 # Set default editor
@@ -25,14 +25,14 @@ PURE_GIT_PULL=0
 # Set up completion
 autoload -U compinit; compinit
 
-# load custom submodules
+# Load custom submodules
 if [ -d ~/.zsh ]; then
     for f in $(find -L ~/.zsh -maxdepth 1 ! -name '.*' -type f); do
         source $f
     done
 fi
 
-# should be loaded as late as possible
+# Should be loaded as late as possible
 source $PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set up fzf
@@ -43,3 +43,9 @@ fi
 
 # Load zmv (zsh batch renamer)
 autoload zmv
+
+# Hook up direnv
+if $(which direnv &>/dev/null); then
+    eval "$(direnv hook zsh)"
+fi
+
