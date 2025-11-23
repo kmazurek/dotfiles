@@ -5,10 +5,12 @@ keybinding:
     prevPage: <c-u>
     nextPage: <c-d>
 git:
-  paging:
-    colorArg: never
-    pager: delta --dark --paging=never
-    useConfig: false
+  autoFetch: false
+  autoForwardBranches: none
+  pagers:
+    - colorArg: never
+      pager: delta --dark --paging=never
+      useConfig: false
 customCommands:
   - key: b
     command: tig blame -- {{.SelectedFile.Name}}
