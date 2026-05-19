@@ -103,6 +103,7 @@ H = { c = "command_palette", o = ":config-open", r = ":config-reload"}
 q = ":buffer-close"
 s = "workspace_symbol_picker"
 S = "symbol_picker"
+W = ":toggle-option soft-wrap.enable"
 space = "last_picker"
 
 # bucket of various bindings I don't use often enough to memorise
