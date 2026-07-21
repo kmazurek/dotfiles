@@ -1,22 +1,22 @@
 [[plugin.deps]]
 use = "ndtoan96/ouch"
-rev = "1ee69a5"
-hash = "63679f3daf8551ff8755be38b5ced0f"
+rev = "406ce6c"
+hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[plugin.deps]]
 use = "DreamMaoMao/easyjump"
-rev = "6606fb1"
-hash = "9209d17be3c792eda9ad60b447c4db1e"
+rev = "6cea8b4"
+hash = "6974cc8d2765f4d4b234e82b2b28e949"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "0e2ae47"
-hash = "6656f2869ae2274a0e1860876f15186f"
+rev = "a6d30a1"
+hash = "7d4dd1afcb7ecbd3609c29a82d6dbc5c"
 
 [[plugin.deps]]
 use = "pirafrank/what-size"
-rev = "d896656"
-hash = "62251f94eb67648d42cdfcfb8be0fad2"
+rev = "179ebf6"
+hash = "57056b9728006881d580ccabe8154a9c"
 
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
