@@ -7,9 +7,9 @@ keybinding:
 git:
   autoFetch: false
   autoForwardBranches: none
-  pagers:
+  diffRenderers:
     - colorArg: never
-      pager: delta --dark --paging=never
+      command: delta --dark --paging=never
       useConfig: false
 customCommands:
   - key: b
