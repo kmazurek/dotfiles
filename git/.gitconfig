@@ -40,3 +40,5 @@
 	whitespace = red reverse
 [url "git@gitlab.com:"]
     insteadOf = https://gitlab.com/
+[init]
+	defaultBranch = main
